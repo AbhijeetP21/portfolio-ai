@@ -6,6 +6,8 @@ export function useScrollReveal() {
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
     observerRef.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -19,7 +21,7 @@ export function useScrollReveal() {
       { threshold: 0.12 }
     );
 
-    const elements = document.querySelectorAll('section h2, .tilt-card');
+    const elements = document.querySelectorAll('section h2, [data-reveal]');
     elements.forEach((el) => {
       el.classList.add('opacity-0');
       (el as HTMLElement).style.animationFillMode = 'forwards';
@@ -27,9 +29,7 @@ export function useScrollReveal() {
     });
 
     return () => {
-      if (observerRef.current) {
-        observerRef.current.disconnect();
-      }
+      observerRef.current?.disconnect();
     };
   }, []);
 }

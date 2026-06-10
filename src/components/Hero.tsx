@@ -1,112 +1,90 @@
-'use client';
+import { Icon } from './ui/Icon';
 
 export function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center relative pt-24">
-      <div className="container mx-auto px-6">
-        <div className="max-w-5xl mx-auto text-center">
-          {/* Terminal Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-mono text-primary-600 dark:text-primary-400 mb-8 animate-fade-in-up cursor-target">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary-500"></span>
-            </span>
-            System.out.println("Hello World");
-          </div>
+    <section className="pt-40 pb-24">
+      <div className="container mx-auto px-6 max-w-5xl">
+        {/* Status line — links to the in-progress work */}
+        <a
+          href="#building"
+          className="inline-flex items-center gap-2.5 font-mono text-xs text-zinc-600 dark:text-zinc-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors mb-10"
+        >
+          <span className="relative flex h-1.5 w-1.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60"></span>
+            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
+          </span>
+          building now: healthcare-rag · autonomous-web-agent
+        </a>
 
-          <h1
-            className="text-5xl md:text-7xl font-black tracking-tight mb-6 leading-tight animate-fade-in-up"
-            style={{ animationDelay: '0.1s' }}
+        <h1 className="text-4xl md:text-6xl font-semibold tracking-tight leading-[1.08] text-zinc-950 dark:text-zinc-50 mb-6">
+          I build AI systems
+          <br />
+          <span className="text-zinc-500 dark:text-zinc-400">that hold up in production.</span>
+        </h1>
+
+        <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed mb-6">
+          I&apos;m <span className="text-zinc-950 dark:text-zinc-100 font-medium">Abhijeet Sandip Pachpute</span>, MS
+          in Computer Science, University of Utah (&rsquo;26). I ship LLM systems end to end: retrieval, agents,
+          evals, and the backend engineering that keeps them reliable.
+        </p>
+
+        <p className="font-mono text-sm text-zinc-500 dark:text-zinc-500 mb-10">
+          2 IEEE publications · 3 patents filed · prev: AI engineering @ AVI Human Services
+        </p>
+
+        <div className="flex flex-wrap items-center gap-4 mb-12">
+          <a
+            href="#work"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-zinc-950 text-zinc-50 dark:bg-zinc-50 dark:text-zinc-950 text-sm font-medium hover:opacity-85 transition-opacity"
           >
-            Building Intelligent &amp; <br />
-            <span className="text-slate-950 dark:text-white">Secure Systems</span>
-          </h1>
-
-          <p
-            className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in-up"
-            style={{ animationDelay: '0.2s' }}
+            View work
+            <Icon name="arrow-right" size={14} />
+          </a>
+          <a
+            href="/Abhijeet_Resume_SDE_June26.pdf"
+            target="_blank"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-zinc-300 dark:border-zinc-700 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:border-zinc-500 dark:hover:border-zinc-500 transition-colors"
           >
-            I&apos;m <strong>Abhijeet S Pachpute</strong>, MS in Computer Science @ University of Utah (May 2026). I build
-            production software, ship applied AI, and care obsessively about security and reliability.
-          </p>
+            Resume
+            <Icon name="download" size={14} />
+          </a>
+        </div>
 
-          {/* Quick facts */}
-          <div
-            className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-10 animate-fade-in-up"
-            style={{ animationDelay: '0.25s' }}
+        <div className="flex flex-wrap items-center gap-6 text-sm text-zinc-500 dark:text-zinc-400">
+          <a
+            href="mailto:abhijeetsp21@gmail.com"
+            className="inline-flex items-center gap-2 hover:text-zinc-950 dark:hover:text-zinc-100 transition-colors"
           >
-            <span className="px-4 py-2 rounded-full border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 text-sm text-slate-700 dark:text-slate-300 cursor-target">
-              <i className="fa-solid fa-location-dot mr-2 text-primary-500"></i> Open for roles across US
-            </span>
-            <span className="px-4 py-2 rounded-full border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 text-sm text-slate-700 dark:text-slate-300 cursor-target">
-              <i className="fa-solid fa-graduation-cap mr-2 text-accent-500"></i> MS CS • May 2026
-            </span>
-            <span className="px-4 py-2 rounded-full border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/50 text-sm text-slate-700 dark:text-slate-300 cursor-target">
-              <i className="fa-solid fa-bolt mr-2 text-yellow-500"></i> Open to SWE / AI / Security roles
-            </span>
-          </div>
-
-          <div
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up"
-            style={{ animationDelay: '0.3s' }}
+            <Icon name="mail" size={15} />
+            Email
+          </a>
+          <a
+            href="https://linkedin.com/in/abhijeet-pachpute/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 hover:text-zinc-950 dark:hover:text-zinc-100 transition-colors"
           >
-            <a
-              href="#projects"
-              className="px-8 py-4 bg-slate-950 dark:bg-white text-white dark:text-slate-950 font-bold rounded-full hover:opacity-90 transition-all transform hover:-translate-y-1 shadow-[0_0_20px_rgba(0,0,0,0.12)] dark:shadow-[0_0_20px_rgba(255,255,255,0.18)] cursor-target"
-            >
-              View My Work
-            </a>
-            <a
-              href="/Abhijeet_Resume_SDE_June26.pdf"
-              target="_blank"
-              className="px-8 py-4 glass-surface text-slate-950 dark:text-white font-semibold rounded-full hover:opacity-95 transition-all flex items-center gap-2 group cursor-target"
-            >
-              <span>Download Resume</span>
-              <i className="fa-solid fa-download group-hover:animate-bounce"></i>
-            </a>
-          </div>
-
-          {/* Links */}
-          <div className="mt-8 flex justify-center gap-5 text-sm text-slate-600 dark:text-slate-400">
-            <a
-              className="hover:text-primary-500 transition-colors cursor-target"
-              target="_blank"
-              href="mailto:abhijeetsp21@gmail.com"
-            >
-              <i className="fa-solid fa-envelope mr-2"></i>Email
-            </a>
-            <a
-              className="hover:text-primary-500 transition-colors cursor-target"
-              target="_blank"
-              href="https://linkedin.com/in/abhijeet-pachpute/"
-            >
-              <i className="fa-brands fa-linkedin mr-2"></i>LinkedIn
-            </a>
-            <a
-              className="hover:text-primary-500 transition-colors cursor-target"
-              target="_blank"
-              href="https://github.com/AbhijeetP21"
-            >
-              <i className="fa-brands fa-github mr-2"></i>GitHub
-            </a>
-            <a
-              className="hover:text-primary-500 transition-colors cursor-target"
-              target="_blank"
-              href="https://scholar.google.com/citations?user=1aG6rS8AAAAJ&hl=en"
-            >
-              <i className="fa-solid fa-graduation-cap mr-2"></i>Scholar
-            </a>
-          </div>
-
-          {/* Tech Stack Strip */}
-          <div className="mt-14 mb-16 pt-8 border-t border-slate-200/70 dark:border-slate-800/50 flex flex-wrap justify-center gap-8 opacity-70 hover:opacity-100 transition-opacity">
-            <i className="fa-brands fa-aws text-3xl tech-icon" title="AWS" style={{ animationDelay: '0s' }}></i>
-            <i className="fa-brands fa-docker text-3xl tech-icon" title="Docker" style={{ animationDelay: '0.1s' }}></i>
-            <i className="fa-brands fa-python text-3xl tech-icon" title="Python" style={{ animationDelay: '0.2s' }}></i>
-            <i className="fa-brands fa-java text-3xl tech-icon" title="Java" style={{ animationDelay: '0.3s' }}></i>
-            <i className="fa-brands fa-react text-3xl tech-icon animate-spin-slow" title="React" style={{ animationDelay: '0.4s' }}></i>
-            <i className="fa-brands fa-node text-3xl tech-icon" title="Node.js" style={{ animationDelay: '0.5s' }}></i>
-          </div>
+            <Icon name="linkedin" size={15} />
+            LinkedIn
+          </a>
+          <a
+            href="https://github.com/AbhijeetP21"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 hover:text-zinc-950 dark:hover:text-zinc-100 transition-colors"
+          >
+            <Icon name="github" size={15} />
+            GitHub
+          </a>
+          <a
+            href="https://scholar.google.com/citations?user=1aG6rS8AAAAJ&hl=en"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 hover:text-zinc-950 dark:hover:text-zinc-100 transition-colors"
+          >
+            <Icon name="scholar" size={15} />
+            Scholar
+          </a>
         </div>
       </div>
     </section>

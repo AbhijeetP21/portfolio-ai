@@ -1,53 +1,50 @@
-export interface SkillCategory {
+export type SkillTier = 'daily' | 'comfortable' | 'familiar';
+
+export interface SkillGroup {
   title: string;
-  items: {
-    name: string;
-    icon: string;
-    iconColor: string;
-  }[];
+  items: { name: string; tier: SkillTier }[];
 }
 
-export const skills: SkillCategory[] = [
+export const skillGroups: SkillGroup[] = [
   {
-    title: 'Programming',
+    title: 'AI / ML Engineering',
     items: [
-      { name: 'Java', icon: 'fa-java', iconColor: 'text-primary-500' },
-      { name: 'Python', icon: 'fa-python', iconColor: 'text-yellow-500' },
-      { name: 'C++', icon: 'fa-code', iconColor: 'text-blue-500' },
-      { name: 'Kotlin', icon: 'fa-code', iconColor: 'text-purple-500' },
-      { name: 'JavaScript / TypeScript', icon: 'fa-js', iconColor: 'text-yellow-400' },
-      { name: 'HTML / CSS / SCSS / Tailwind', icon: 'fa-file-code', iconColor: 'text-slate-500' },
+      { name: 'LLM applications (RAG, agents)', tier: 'daily' },
+      { name: 'LangChain', tier: 'daily' },
+      { name: 'OpenAI / Gemini APIs', tier: 'daily' },
+      { name: 'Prompt design & evals', tier: 'daily' },
+      { name: 'Playwright automation', tier: 'comfortable' },
+      { name: 'PyTorch', tier: 'comfortable' },
+      { name: 'OpenCV / CNNs', tier: 'comfortable' },
+      { name: 'Vector search & embeddings', tier: 'comfortable' },
+      { name: 'TensorFlow', tier: 'familiar' },
     ],
   },
   {
-    title: 'Backend / Cloud',
+    title: 'Systems & Backend',
     items: [
-      { name: 'AWS (EC2/S3/Lambda)', icon: 'fa-aws', iconColor: 'text-orange-500' },
-      { name: 'Docker / Kubernetes', icon: 'fa-docker', iconColor: 'text-blue-500' },
-      { name: 'CI/CD (GitHub Actions)', icon: 'fa-code-branch', iconColor: 'text-slate-600' },
-      { name: 'Spring Boot', icon: 'fa-leaf', iconColor: 'text-green-600' },
-      { name: 'Node.js / Express.js', icon: 'fa-node', iconColor: 'text-green-600' },
-      { name: 'MySQL / MongoDB / PostgreSQL', icon: 'fa-database', iconColor: 'text-blue-500' },
+      { name: 'Python', tier: 'daily' },
+      { name: 'TypeScript / Next.js / React', tier: 'daily' },
+      { name: 'PostgreSQL / MySQL', tier: 'daily' },
+      { name: 'Node.js / Express', tier: 'comfortable' },
+      { name: 'Java / Spring Boot', tier: 'comfortable' },
+      { name: 'C / C++', tier: 'comfortable' },
+      { name: 'Redis', tier: 'comfortable' },
+      { name: 'MongoDB', tier: 'comfortable' },
+      { name: 'Kotlin', tier: 'familiar' },
     ],
   },
   {
-    title: 'AI / ML',
+    title: 'Infra & Security',
     items: [
-      { name: 'PyTorch / TensorFlow', icon: 'fa-brain', iconColor: 'text-accent-500' },
-      { name: 'OpenCV / CNNs', icon: 'fa-eye', iconColor: 'text-accent-500' },
-      { name: 'RAG', icon: 'fa-robot', iconColor: 'text-accent-500' },
-      { name: 'Scikit-Learn', icon: 'fa-chart-line', iconColor: 'text-accent-500' },
-      { name: 'Vector embeddings', icon: 'fa-database', iconColor: 'text-accent-500' },
-    ],
-  },
-  {
-    title: 'Enterprise Security',
-    items: [
-      { name: 'Digital forensics', icon: 'fa-user-secret', iconColor: 'text-red-500' },
-      { name: 'Wireshark / Nmap', icon: 'fa-network-wired', iconColor: 'text-red-500' },
-      { name: 'ISO 27001', icon: 'fa-lock', iconColor: 'text-red-500' },
-      { name: 'Vulnerability assessment', icon: 'fa-bug', iconColor: 'text-red-500' },
-      { name: 'Privilege management', icon: 'fa-shield-halved', iconColor: 'text-red-500' },
+      { name: 'Docker', tier: 'daily' },
+      { name: 'AWS (EC2 / S3 / Lambda)', tier: 'comfortable' },
+      { name: 'CI/CD (GitHub Actions)', tier: 'comfortable' },
+      { name: 'Supabase', tier: 'comfortable' },
+      { name: 'Endpoint security (Intune, Tanium)', tier: 'comfortable' },
+      { name: 'Digital forensics / Nmap / Wireshark', tier: 'comfortable' },
+      { name: 'Kubernetes', tier: 'familiar' },
+      { name: 'ISO 27001', tier: 'familiar' },
     ],
   },
 ];

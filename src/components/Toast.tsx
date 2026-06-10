@@ -1,19 +1,21 @@
 'use client';
 
 import { useToast } from '@/contexts/ToastContext';
+import { Icon } from './ui/Icon';
 
 export function Toast() {
   const { toastMessage, showToast } = useToast();
 
   return (
     <div
-      id="toast"
-      className={`fixed bottom-5 right-5 bg-slate-950 dark:bg-slate-800 text-white px-6 py-3 rounded-lg shadow-xl transform transition-all duration-300 border border-primary-500/30 flex items-center gap-3 z-50 ${
+      className={`fixed bottom-5 right-5 bg-zinc-950 dark:bg-zinc-900 text-zinc-50 px-5 py-3 rounded-lg border border-zinc-800 flex items-center gap-3 z-50 transform transition-all duration-300 ${
         showToast ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
       }`}
     >
-      <i className="fa-solid fa-circle-check text-green-400"></i>
-      <span id="toast-msg">{toastMessage || 'Action Successful'}</span>
+      <span className="text-emerald-400">
+        <Icon name="check" size={15} />
+      </span>
+      <span className="text-sm">{toastMessage || 'Done'}</span>
     </div>
   );
 }

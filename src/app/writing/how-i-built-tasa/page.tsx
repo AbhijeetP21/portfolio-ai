@@ -1,33 +1,29 @@
 'use client';
 
 import Link from 'next/link';
-import { BackgroundEffects } from '@/components/BackgroundEffects';
-import { CustomCursor } from '@/components/CustomCursor';
 import { ThemeToggle } from '@/components/ThemeToggle';
+import { Tag } from '@/components/ui/Tag';
+import { Icon } from '@/components/ui/Icon';
 
 export default function TasaArticle() {
     return (
         <>
-            <CustomCursor />
-            <BackgroundEffects />
-
             {/* Navigation */}
-            <header className="fixed top-0 left-0 right-0 z-50 py-4 bg-white/80 dark:bg-slate-950/80 backdrop-blur-lg border-b border-slate-200/50 dark:border-slate-800/50">
-                <nav className="container mx-auto px-6 flex items-center justify-between">
+            <header className="fixed top-0 left-0 right-0 z-50 py-4 bg-white/85 dark:bg-zinc-950/85 backdrop-blur-lg border-b border-zinc-200/60 dark:border-zinc-800/60">
+                <nav className="container mx-auto px-6 max-w-5xl flex items-center justify-between">
                     <Link
                         href="/"
-                        className="text-2xl font-bold tracking-tighter font-mono text-slate-900 dark:text-white hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
+                        className="font-mono text-lg font-bold tracking-tighter text-zinc-950 dark:text-zinc-50 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
                     >
-                        &lt;AP /&gt;
+                        ap<span className="text-emerald-600 dark:text-emerald-400">.</span>
                     </Link>
 
                     <div className="flex items-center gap-4 sm:gap-6">
                         <Link
                             href="/writing"
-                            className="flex items-center text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
+                            className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100 transition-colors"
                         >
-                            <i className="fa-solid fa-arrow-left mr-2"></i>
-                            <span className="hidden sm:inline">Back to Writing</span>
+                            <span className="hidden sm:inline">Back to writing</span>
                             <span className="sm:hidden">Back</span>
                         </Link>
                         <ThemeToggle />
@@ -36,57 +32,49 @@ export default function TasaArticle() {
             </header>
 
             {/* Article Content */}
-            <main className="min-h-screen pt-32 pb-16">
-                <article className="container mx-auto px-6 lg:px-8">
+            <main className="min-h-screen pt-36 pb-20">
+                <article className="container mx-auto px-6">
                     <div className="max-w-2xl mx-auto">
 
                         {/* Article Header */}
-                        <header className="mb-16 text-center">
-                            <div className="flex items-center justify-center gap-3 mb-6">
-                                <span className="inline-flex items-center px-4 py-2 bg-primary-500/10 text-primary-600 dark:text-primary-400 text-sm font-medium rounded-full">
-                                    <i className="fa-solid fa-fingerprint mr-2"></i>
-                                    Biometric Security
-                                </span>
-                                <span className="inline-flex items-center px-3 py-1.5 bg-amber-500/10 text-amber-600 dark:text-amber-400 text-xs font-mono rounded-full">
-                                    Legacy Project
-                                </span>
-                                <span className="text-sm text-slate-500 dark:text-slate-400">10 min read</span>
-                            </div>
+                        <header className="mb-16">
+                            <p className="font-mono text-xs uppercase tracking-[0.2em] text-emerald-600 dark:text-emerald-400 mb-4">
+                                Biometric Security
+                            </p>
 
-                            <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6 text-slate-900 dark:text-white">
+                            <h1 className="text-3xl md:text-4xl font-semibold tracking-tight leading-tight mb-5 text-zinc-950 dark:text-zinc-50">
                                 How I Built TASA: Face Authentication for a Virtual Assistant
                             </h1>
 
-                            <p className="text-xl text-slate-600 dark:text-slate-400 leading-relaxed max-w-xl mx-auto">
-                                Implementing hierarchical access control and real-time face recognition for privacy-aware voice assistants.
+                            <p className="text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                                Implementing hierarchical access control and real-time face recognition with CNN + HOG for a privacy-aware virtual assistant. A legacy project retrospective.
                             </p>
 
-                            <div className="flex flex-wrap justify-center gap-2 mt-8">
-                                {['Python', 'TensorFlow', 'OpenCV', 'Raspberry Pi', 'CNN', 'HOG'].map((tag) => (
-                                    <span
-                                        key={tag}
-                                        className="px-3 py-1 bg-slate-100 dark:bg-slate-800/50 text-sm text-slate-600 dark:text-slate-300 rounded-full border border-slate-200 dark:border-slate-700"
-                                    >
-                                        {tag}
-                                    </span>
+                            <p className="font-mono text-xs text-zinc-500 dark:text-zinc-500 mt-5">
+                                Jan 2024 · 10 min read
+                            </p>
+
+                            <div className="flex flex-wrap gap-2 mt-5">
+                                {['Python', 'OpenCV', 'TensorFlow', 'Security'].map((tag) => (
+                                    <Tag key={tag}>{tag}</Tag>
                                 ))}
                             </div>
                         </header>
 
                         {/* Article Body */}
-                        <div className="space-y-16">
+                        <div className="space-y-14">
 
                             {/* Section: The Problem Space */}
                             <section>
-                                <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
+                                <h2 className="text-2xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50 mb-6">
                                     The Problem Space
                                 </h2>
                                 <div>
-                                    <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed mb-6">
-                                        Back in 2023, I worked on TASA as my undergraduate research project. The motivation was straightforward: virtual assistants like Alexa and Siri had a fundamental security flaw. They couldn&apos;t distinguish between users. Anyone within earshot could access your calendar, messages, or smart home controls. There was no concept of <strong className="text-slate-900 dark:text-white">ownership or privacy</strong>.
+                                    <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed mb-6">
+                                        Back in 2023, I worked on TASA as my undergraduate research project. The motivation was straightforward: virtual assistants like Alexa and Siri had a fundamental security flaw. They couldn&apos;t distinguish between users. Anyone within earshot could access your calendar, messages, or smart home controls. There was no concept of <strong className="text-zinc-950 dark:text-zinc-50">ownership or privacy</strong>.
                                     </p>
-                                    <blockquote className="border-l-4 border-primary-500 pl-6 py-4 bg-slate-50 dark:bg-slate-800/30 rounded-r-xl my-6">
-                                        <p className="text-lg italic text-slate-700 dark:text-slate-300">
+                                    <blockquote className="border-l-2 border-emerald-500 pl-6 py-1">
+                                        <p className="text-lg italic text-zinc-600 dark:text-zinc-400 leading-relaxed">
                                             TASA (Trusted Assistant with Secure Access) explored whether we could build a virtual assistant with proper authentication and hierarchical access control, without sacrificing the hands-free convenience that makes these systems useful.
                                         </p>
                                     </blockquote>
@@ -94,47 +82,34 @@ export default function TasaArticle() {
                             </section>
 
                             {/* Section: Legacy Project Note */}
-                            <section className="glass-surface rounded-2xl p-8 border border-amber-200 dark:border-amber-800/50 bg-amber-50/50 dark:bg-amber-900/10">
-                                <div className="flex items-start gap-4">
-                                    <div className="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center shrink-0">
-                                        <i className="fa-solid fa-clock-rotate-left text-amber-500"></i>
-                                    </div>
-                                    <div>
-                                        <h3 className="font-bold text-slate-900 dark:text-white mb-2">Legacy Project Note</h3>
-                                        <p className="text-slate-600 dark:text-slate-400 text-sm">
-                                            This was an academic research project completed in 2023. The code is no longer publicly available, but the technical approach and lessons learned remain relevant for anyone interested in biometric authentication or secure system design.
-                                        </p>
-                                    </div>
+                            <section>
+                                <div className="p-5 rounded-xl border border-amber-500/30 bg-amber-500/5">
+                                    <p className="font-mono text-[11px] uppercase tracking-[0.15em] text-amber-600 dark:text-amber-400 mb-2">
+                                        Legacy Project Note
+                                    </p>
+                                    <p className="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+                                        This was an academic research project completed in 2023. The code is no longer publicly available, but the technical approach and lessons learned remain relevant for anyone interested in biometric authentication or secure system design.
+                                    </p>
                                 </div>
                             </section>
 
                             {/* Section: Authentication Pipeline */}
-                            <section className="glass-surface rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-                                <h2 className="text-sm font-bold uppercase tracking-wider text-primary-500 mb-6">
+                            <section className="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/40 p-8">
+                                <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-emerald-600 dark:text-emerald-400 mb-6">
                                     The Authentication Pipeline
                                 </h2>
-                                <div>
-                                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-6">
-                                        The core challenge was building a multi-layered authentication system that worked in real-time. We settled on a <strong className="text-slate-900 dark:text-white">two-factor approach</strong>:
+                                <div className="space-y-6">
+                                    <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed">
+                                        The core challenge was building a multi-layered authentication system that worked in real-time. We settled on a <strong className="text-zinc-950 dark:text-zinc-50">two-factor approach</strong>:
                                     </p>
                                     <div className="space-y-4">
-                                        <div className="flex items-start gap-4">
-                                            <div className="w-10 h-10 rounded-lg bg-primary-500/10 flex items-center justify-center shrink-0">
-                                                <i className="fa-solid fa-camera text-primary-500"></i>
-                                            </div>
-                                            <div>
-                                                <h3 className="font-bold text-slate-900 dark:text-white">Primary: Face Recognition</h3>
-                                                <p className="text-slate-600 dark:text-slate-400">CNN with HOG (Histogram of Oriented Gradients) feature descriptors for real-time face identification</p>
-                                            </div>
+                                        <div className="border-l-2 border-emerald-500 pl-6 space-y-2">
+                                            <h3 className="font-semibold text-zinc-950 dark:text-zinc-50">Primary: Face Recognition</h3>
+                                            <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed text-sm">CNN with HOG (Histogram of Oriented Gradients) feature descriptors for real-time face identification</p>
                                         </div>
-                                        <div className="flex items-start gap-4">
-                                            <div className="w-10 h-10 rounded-lg bg-accent-500/10 flex items-center justify-center shrink-0">
-                                                <i className="fa-solid fa-key text-accent-500"></i>
-                                            </div>
-                                            <div>
-                                                <h3 className="font-bold text-slate-900 dark:text-white">Secondary: Secret Passphrase</h3>
-                                                <p className="text-slate-600 dark:text-slate-400">User-specific passphrase prevents photo-based spoofing and adds a knowledge factor</p>
-                                            </div>
+                                        <div className="border-l-2 border-amber-500 pl-6 space-y-2">
+                                            <h3 className="font-semibold text-zinc-950 dark:text-zinc-50">Secondary: Secret Passphrase</h3>
+                                            <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed text-sm">User-specific passphrase prevents photo-based spoofing and adds a knowledge factor</p>
                                         </div>
                                     </div>
                                 </div>
@@ -142,108 +117,107 @@ export default function TasaArticle() {
 
                             {/* Section: Why HOG? */}
                             <section>
-                                <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
+                                <h2 className="text-2xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50 mb-6">
                                     Why HOG for Feature Extraction?
                                 </h2>
                                 <div>
-                                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-6">
+                                    <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed mb-6">
                                         Most modern face recognition systems use deep feature extractors like FaceNet or ArcFace. We chose Histogram of Oriented Gradients for specific reasons:
                                     </p>
 
                                     <div className="grid gap-4 mb-8">
                                         {[
-                                            { icon: 'fa-bolt', title: 'Computational Efficiency', desc: 'Significantly lighter than end-to-end deep learning. Critical for real-time on a Raspberry Pi.' },
-                                            { icon: 'fa-eye', title: 'Interpretability', desc: 'HOG captures structural features: gradient orientations that correspond to edges and contours. More transparent than black-box deep features.' },
-                                            { icon: 'fa-database', title: 'Low Training Requirements', desc: 'Requires far fewer training samples per user. Realistic when each user only provides 50–100 registration images.' },
+                                            { title: 'Computational Efficiency', desc: 'Significantly lighter than end-to-end deep learning. Critical for real-time on a Raspberry Pi.' },
+                                            { title: 'Interpretability', desc: 'HOG captures structural features: gradient orientations that correspond to edges and contours. More transparent than black-box deep features.' },
+                                            { title: 'Low Training Requirements', desc: 'Requires far fewer training samples per user. Realistic when each user only provides 50–100 registration images.' },
                                         ].map((item) => (
-                                            <div key={item.title} className="flex items-start gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-800/30 border border-slate-200 dark:border-slate-700/50">
-                                                <i className={`fa-solid ${item.icon} text-primary-500 mt-1`}></i>
-                                                <div>
-                                                    <h4 className="font-semibold text-slate-900 dark:text-white">{item.title}</h4>
-                                                    <p className="text-sm text-slate-600 dark:text-slate-400">{item.desc}</p>
-                                                </div>
+                                            <div key={item.title} className="p-6 rounded-xl border border-zinc-200 dark:border-zinc-800">
+                                                <h4 className="font-semibold text-zinc-950 dark:text-zinc-50 text-base mb-2">{item.title}</h4>
+                                                <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">{item.desc}</p>
                                             </div>
                                         ))}
                                     </div>
 
                                     {/* Pipeline Diagram */}
-                                    <div className="bg-slate-900 dark:bg-slate-950 rounded-2xl p-6 font-mono text-sm mb-8 overflow-hidden">
+                                    <div className="bg-zinc-950 rounded-xl border border-zinc-800 p-6 font-mono text-sm mb-8 overflow-x-auto text-zinc-300">
                                         <div className="mb-4">
-                                            <span className="text-slate-500">// HOG Feature Extraction Pipeline</span>
+                                            <span className="text-zinc-500">// HOG Feature Extraction Pipeline</span>
                                         </div>
-                                        <div className="text-primary-400">
+                                        <div className="text-emerald-400">
                                             Image → Preprocessing → Gradient Calculation → Cell Division →
                                         </div>
-                                        <div className="text-primary-400">
+                                        <div className="text-emerald-400">
                                             Histogram Generation → Block Normalization → Feature Vector → CNN
                                         </div>
                                         <div className="mt-4">
-                                            <span className="text-slate-500">// Per-pixel gradient computation</span>
+                                            <span className="text-zinc-500">// Per-pixel gradient computation</span>
                                         </div>
-                                        <div className="text-slate-300">
+                                        <div>
                                             <span className="text-purple-400">Magnitude</span>: G = √(Gx² + Gy²)
                                         </div>
-                                        <div className="text-slate-300">
+                                        <div>
                                             <span className="text-purple-400">Orientation</span>: θ = arctan(Gy/Gx)
                                         </div>
                                     </div>
 
-                                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
-                                        The image is divided into 8×8 pixel cells. For each cell, we build a <strong className="text-slate-900 dark:text-white">9-bin histogram of gradient orientations</strong>. These histograms are then normalized using L2 normalization across overlapping blocks to handle lighting variations. The result is a feature descriptor that&apos;s robust to illumination changes but sensitive to facial structure.
+                                    <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed">
+                                        The image is divided into 8×8 pixel cells. For each cell, we build a <strong className="text-zinc-950 dark:text-zinc-50">9-bin histogram of gradient orientations</strong>. These histograms are then normalized using L2 normalization across overlapping blocks to handle lighting variations. The result is a feature descriptor that&apos;s robust to illumination changes but sensitive to facial structure.
                                     </p>
                                 </div>
                             </section>
 
                             {/* Section: CNN Architecture */}
                             <section>
-                                <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
+                                <h2 className="text-2xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50 mb-6">
                                     The CNN Architecture
                                 </h2>
                                 <div>
-                                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-6">
-                                        The HOG descriptors feed into a relatively shallow CNN (3 convolutional layers + 2 fully connected layers). The network learns to classify users into three tiers, detect invalid authentication attempts, and handle <strong className="text-slate-900 dark:text-white">temporal information across video frames</strong>.
+                                    <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed mb-6">
+                                        The HOG descriptors feed into a relatively shallow CNN (3 convolutional layers + 2 fully connected layers). The network learns to classify users into three tiers, detect invalid authentication attempts, and handle <strong className="text-zinc-950 dark:text-zinc-50">temporal information across video frames</strong>.
                                     </p>
 
-                                    <div className="p-4 rounded-xl bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800/50 mb-6">
-                                        <p className="text-sm text-red-800 dark:text-red-300">
-                                            <i className="fa-solid fa-shield-halved mr-2"></i>
-                                            <strong>Anti-Spoofing:</strong> Rather than processing single images, we extract features from multiple consecutive frames. The CNN learns patterns that only appear in live video feeds: micro-movements, subtle lighting changes, natural head motion. Static photos fail this temporal consistency check.
+                                    <div className="p-5 rounded-xl border border-red-500/30 bg-red-500/5">
+                                        <p className="font-mono text-[11px] uppercase tracking-[0.15em] text-red-600 dark:text-red-400 mb-2">
+                                            Anti-Spoofing
+                                        </p>
+                                        <p className="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+                                            Rather than processing single images, we extract features from multiple consecutive frames. The CNN learns patterns that only appear in live video feeds: micro-movements, subtle lighting changes, natural head motion. Static photos fail this temporal consistency check.
                                         </p>
                                     </div>
                                 </div>
                             </section>
 
                             {/* Section: Multi-Level Access Control */}
-                            <section className="glass-surface rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-                                <h2 className="text-sm font-bold uppercase tracking-wider text-primary-500 mb-6">
+                            <section className="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/40 p-8">
+                                <h2 className="font-mono text-xs uppercase tracking-[0.2em] text-emerald-600 dark:text-emerald-400 mb-6">
                                     Multi-Level Access Control
                                 </h2>
                                 <div className="space-y-6">
-                                    <div>
-                                        <h3 className="font-bold text-slate-900 dark:text-white mb-2">
-                                            <i className="fa-solid fa-crown text-amber-500 mr-2"></i>
+                                    <div className="border-l-2 border-amber-500 pl-6 space-y-2">
+                                        <h3 className="font-semibold text-zinc-950 dark:text-zinc-50">
                                             Admin (Owner)
                                         </h3>
-                                        <p className="text-slate-600 dark:text-slate-400 text-sm">Full system access: personalized data, system configuration, user management, and all standard assistant features.</p>
+                                        <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed text-sm">Full system access: personalized data, system configuration, user management, and all standard assistant features.</p>
                                     </div>
-                                    <div className="border-t border-slate-200 dark:border-slate-700 pt-6">
-                                        <h3 className="font-bold text-slate-900 dark:text-white mb-2">
-                                            <i className="fa-solid fa-user-shield text-blue-500 mr-2"></i>
+                                    <div className="border-l-2 border-emerald-500 pl-6 space-y-2">
+                                        <h3 className="font-semibold text-zinc-950 dark:text-zinc-50">
                                             Sub-Admin
                                         </h3>
-                                        <p className="text-slate-600 dark:text-slate-400 text-sm">Configurable partial access: general assistant features, limited personal data, no system configuration rights.</p>
+                                        <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed text-sm">Configurable partial access: general assistant features, limited personal data, no system configuration rights.</p>
                                     </div>
-                                    <div className="border-t border-slate-200 dark:border-slate-700 pt-6">
-                                        <h3 className="font-bold text-slate-900 dark:text-white mb-2">
-                                            <i className="fa-solid fa-user text-slate-500 mr-2"></i>
+                                    <div className="border-l-2 border-zinc-400 dark:border-zinc-600 pl-6 space-y-2">
+                                        <h3 className="font-semibold text-zinc-950 dark:text-zinc-50">
                                             Guest
                                         </h3>
-                                        <p className="text-slate-600 dark:text-slate-400 text-sm">Minimal access: public information queries, basic entertainment. Zero access to personal data or system settings.</p>
+                                        <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed text-sm">Minimal access: public information queries, basic entertainment. Zero access to personal data or system settings.</p>
                                     </div>
-                                    <div className="mt-6 p-4 rounded-xl bg-primary-50 dark:bg-primary-900/20 border border-primary-200 dark:border-primary-800/50">
-                                        <p className="text-sm text-primary-700 dark:text-primary-300">
-                                            <i className="fa-solid fa-lightbulb mr-2"></i>
-                                            <strong>Key Design:</strong> This hierarchy is enforced at the backend API level, not just in the UI. Critical for actual security.
+
+                                    <div className="p-5 rounded-xl border border-emerald-500/30 bg-emerald-500/5">
+                                        <p className="font-mono text-[11px] uppercase tracking-[0.15em] text-emerald-600 dark:text-emerald-400 mb-2">
+                                            Key Design
+                                        </p>
+                                        <p className="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+                                            This hierarchy is enforced at the backend API level, not just in the UI. Critical for actual security.
                                         </p>
                                     </div>
                                 </div>
@@ -251,19 +225,18 @@ export default function TasaArticle() {
 
                             {/* Section: Implementation Challenges */}
                             <section>
-                                <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
+                                <h2 className="text-2xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50 mb-6">
                                     Implementation Challenges
                                 </h2>
-                                <div className="space-y-6">
-                                    <div className="p-6 rounded-xl bg-slate-50 dark:bg-slate-800/30 border border-slate-200 dark:border-slate-700/50">
-                                        <h3 className="font-bold text-slate-900 dark:text-white mb-3 flex items-center">
-                                            <i className="fa-solid fa-gauge-high text-green-500 mr-3"></i>
+                                <div className="space-y-8">
+                                    <div className="border-l-2 border-emerald-500 pl-6 space-y-4">
+                                        <h3 className="font-semibold text-zinc-950 dark:text-zinc-50 text-lg">
                                             Real-Time Performance
                                         </h3>
-                                        <p className="text-slate-700 dark:text-slate-300 mb-4">
+                                        <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed">
                                             Face recognition needed to happen in &lt;500ms to feel seamless. Our initial implementation took 2–3 seconds.
                                         </p>
-                                        <div className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                                        <div className="space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
                                             {[
                                                 'Reduced HOG cell size from 16×16 to 8×8',
                                                 'Implemented frame skipping: authenticate every 3rd frame',
@@ -271,38 +244,36 @@ export default function TasaArticle() {
                                                 'Moved histogram normalization to GPU',
                                             ].map((item) => (
                                                 <div key={item} className="flex items-start gap-2">
-                                                    <span className="w-1.5 h-1.5 rounded-full bg-green-500 mt-2 shrink-0"></span>
+                                                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 shrink-0"></span>
                                                     <span>{item}</span>
                                                 </div>
                                             ))}
                                         </div>
-                                        <p className="text-sm text-green-600 dark:text-green-400 font-semibold mt-4">
+                                        <p className="text-sm text-emerald-600 dark:text-emerald-400 font-semibold mt-4">
                                             Result: ~400ms on a Raspberry Pi 4
                                         </p>
                                     </div>
 
-                                    <div className="p-6 rounded-xl bg-slate-50 dark:bg-slate-800/30 border border-slate-200 dark:border-slate-700/50">
-                                        <h3 className="font-bold text-slate-900 dark:text-white mb-3 flex items-center">
-                                            <i className="fa-solid fa-image text-red-500 mr-3"></i>
+                                    <div className="border-l-2 border-red-500 pl-6 space-y-4">
+                                        <h3 className="font-semibold text-zinc-950 dark:text-zinc-50 text-lg">
                                             Static Image Bypass
                                         </h3>
-                                        <p className="text-slate-700 dark:text-slate-300 mb-4">
+                                        <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed">
                                             Early testing showed users could authenticate using printed photos, defeating the entire purpose.
                                         </p>
-                                        <p className="text-sm text-slate-600 dark:text-slate-400">
-                                            <strong className="text-slate-900 dark:text-white">Solution:</strong> Multi-frame temporal analysis. The CNN looks for consistency across 5–10 consecutive frames. A static image shows perfect consistency (too perfect), while a real face shows natural micro-variations. We also added a liveness check: prompting users to turn their head slightly.
+                                        <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                                            <strong className="text-zinc-950 dark:text-zinc-50">Solution:</strong> Multi-frame temporal analysis. The CNN looks for consistency across 5–10 consecutive frames. A static image shows perfect consistency (too perfect), while a real face shows natural micro-variations. We also added a liveness check: prompting users to turn their head slightly.
                                         </p>
                                     </div>
 
-                                    <div className="p-6 rounded-xl bg-slate-50 dark:bg-slate-800/30 border border-slate-200 dark:border-slate-700/50">
-                                        <h3 className="font-bold text-slate-900 dark:text-white mb-3 flex items-center">
-                                            <i className="fa-solid fa-user-xmark text-amber-500 mr-3"></i>
+                                    <div className="border-l-2 border-amber-500 pl-6 space-y-4">
+                                        <h3 className="font-semibold text-zinc-950 dark:text-zinc-50 text-lg">
                                             False Rejection Rate
                                         </h3>
-                                        <p className="text-slate-700 dark:text-slate-300 mb-4">
+                                        <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed">
                                             Initial accuracy was 90%, but false rejections were frustrating. Users would get denied despite being registered.
                                         </p>
-                                        <div className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                                        <div className="space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
                                             {[
                                                 'Histogram equalization during preprocessing',
                                                 'Multiple registration sessions under different lighting',
@@ -323,7 +294,7 @@ export default function TasaArticle() {
 
                             {/* Section: Results & Performance */}
                             <section>
-                                <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
+                                <h2 className="text-2xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50 mb-6">
                                     Results &amp; Performance
                                 </h2>
                                 <div>
@@ -334,18 +305,18 @@ export default function TasaArticle() {
                                             { value: '<1%', label: 'False Positive Rate' },
                                             { value: '420ms', label: 'Avg Authentication Time' },
                                         ].map((item) => (
-                                            <div key={item.label} className="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/30 border border-slate-200 dark:border-slate-700/50 text-center">
-                                                <div className="text-2xl font-bold text-primary-500 mb-1">{item.value}</div>
-                                                <div className="text-xs text-slate-600 dark:text-slate-400">{item.label}</div>
+                                            <div key={item.label} className="p-6 rounded-xl border border-zinc-200 dark:border-zinc-800">
+                                                <div className="text-2xl font-bold text-emerald-600 dark:text-emerald-400 mb-1">{item.value}</div>
+                                                <div className="text-xs text-zinc-600 dark:text-zinc-400">{item.label}</div>
                                             </div>
                                         ))}
                                     </div>
 
-                                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-6">
+                                    <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed mb-6">
                                         Compared to consumer products (Alexa, Siri, Google Assistant), TASA offered user authentication, hierarchical access control, anti-spoofing protection, and transparent data access policies. Features none of them had at the time.
                                     </p>
 
-                                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                                    <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed">
                                         The tradeoff was requiring users to authenticate before each session, but for security-sensitive use cases (banking queries, medical data, confidential work), this seemed reasonable.
                                     </p>
                                 </div>
@@ -353,13 +324,12 @@ export default function TasaArticle() {
 
                             {/* Section: Lessons Learned / What I'd Do Differently */}
                             <section>
-                                <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
+                                <h2 className="text-2xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50 mb-6">
                                     What I&apos;d Do Differently Today
                                 </h2>
-                                <div className="grid sm:grid-cols-2 gap-6">
-                                    <div>
-                                        <h3 className="font-bold text-primary-600 dark:text-primary-400 mb-4 flex items-center">
-                                            <i className="fa-solid fa-arrow-up-right-dots mr-2"></i>
+                                <div className="grid sm:grid-cols-2 gap-4">
+                                    <div className="p-6 rounded-xl border border-zinc-200 dark:border-zinc-800">
+                                        <h3 className="font-semibold text-emerald-600 dark:text-emerald-400 text-base mb-4">
                                             Improvements
                                         </h3>
                                         <ul className="space-y-3">
@@ -369,16 +339,15 @@ export default function TasaArticle() {
                                                 'Edge ML optimization with TFLite or ONNX Runtime',
                                                 'Differential privacy for stored biometrics',
                                             ].map((item) => (
-                                                <li key={item} className="flex items-start gap-2 text-slate-700 dark:text-slate-300 text-sm">
-                                                    <span className="w-1.5 h-1.5 rounded-full bg-primary-500 mt-2 shrink-0"></span>
+                                                <li key={item} className="flex items-start gap-2 text-zinc-700 dark:text-zinc-300 text-sm">
+                                                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 shrink-0"></span>
                                                     {item}
                                                 </li>
                                             ))}
                                         </ul>
                                     </div>
-                                    <div>
-                                        <h3 className="font-bold text-accent-600 dark:text-accent-400 mb-4 flex items-center">
-                                            <i className="fa-solid fa-brain mr-2"></i>
+                                    <div className="p-6 rounded-xl border border-zinc-200 dark:border-zinc-800">
+                                        <h3 className="font-semibold text-amber-600 dark:text-amber-400 text-base mb-4">
                                             Key Takeaways
                                         </h3>
                                         <ul className="space-y-3">
@@ -388,8 +357,8 @@ export default function TasaArticle() {
                                                 'Temporal information from video is underutilized',
                                                 '90% accuracy ≠ 90% user satisfaction',
                                             ].map((item) => (
-                                                <li key={item} className="flex items-start gap-2 text-slate-700 dark:text-slate-300 text-sm">
-                                                    <span className="w-1.5 h-1.5 rounded-full bg-accent-500 mt-2 shrink-0"></span>
+                                                <li key={item} className="flex items-start gap-2 text-zinc-700 dark:text-zinc-300 text-sm">
+                                                    <span className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 shrink-0"></span>
                                                     {item}
                                                 </li>
                                             ))}
@@ -399,47 +368,46 @@ export default function TasaArticle() {
                             </section>
 
                             {/* Section: Philosophy */}
-                            <section className="text-center py-8">
-                                <p className="text-lg text-slate-600 dark:text-slate-400 mb-4">
+                            <section>
+                                <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed mb-4">
                                     TASA taught me a fundamental lesson:
                                 </p>
-                                <blockquote className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-white mb-4">
-                                    &quot;Build security that people will actually use.&quot;
+                                <blockquote className="border-l-2 border-emerald-500 pl-6 py-1">
+                                    <p className="text-lg italic text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                                        &quot;Build security that people will actually use.&quot;
+                                    </p>
                                 </blockquote>
-                                <p className="text-lg text-primary-500 font-semibold">
+                                <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed mt-4">
                                     The safest system is useless if users bypass it out of frustration.
                                 </p>
                             </section>
 
                         </div>
 
-                        {/* Publication CTA */}
-                        <div className="mt-16 glass-surface rounded-2xl p-8 text-center border border-slate-200 dark:border-slate-700">
-                            <div className="w-16 h-16 rounded-2xl bg-primary-500/10 flex items-center justify-center mx-auto mb-4">
-                                <i className="fa-solid fa-award text-3xl text-primary-500"></i>
-                            </div>
-                            <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Published & Patented</h3>
-                            <p className="text-slate-600 dark:text-slate-400 text-sm mb-4">
+                        {/* CTA Section */}
+                        <div className="mt-16 pt-10 border-t border-zinc-200 dark:border-zinc-800">
+                            <h3 className="font-semibold text-zinc-950 dark:text-zinc-50 mb-4">Published &amp; Patented</h3>
+                            <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-4">
                                 TASA was published at IEEE ICCUBEA 2023 and filed as an Indian patent (202221066577).
                             </p>
-                            <div className="flex flex-wrap justify-center gap-3">
+                            <div className="flex flex-wrap items-center gap-6">
                                 <a
                                     href="https://ieeexplore.ieee.org/document/10392101"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-flex items-center px-4 py-2 bg-primary-500/10 text-primary-600 dark:text-primary-400 text-sm font-medium rounded-full hover:bg-primary-500/20 transition-colors"
+                                    className="inline-flex items-center gap-2 font-mono text-xs text-zinc-600 dark:text-zinc-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
                                 >
-                                    <i className="fa-solid fa-scroll mr-2"></i>
                                     IEEE ICCUBEA 2023
+                                    <Icon name="arrow-up-right" size={12} />
                                 </a>
                                 <a
                                     href="https://iprsearch.ipindia.gov.in/publicsearch"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-flex items-center px-4 py-2 bg-amber-500/10 text-amber-600 dark:text-amber-400 text-sm font-medium rounded-full hover:bg-amber-500/20 transition-colors"
+                                    className="inline-flex items-center gap-2 font-mono text-xs text-zinc-600 dark:text-zinc-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
                                 >
-                                    <i className="fa-solid fa-certificate mr-2"></i>
                                     Indian Patent Filed
+                                    <Icon name="arrow-up-right" size={12} />
                                 </a>
                             </div>
                         </div>
@@ -449,12 +417,11 @@ export default function TasaArticle() {
             </main>
 
             {/* Footer */}
-            <footer className="py-8 border-t border-slate-200 dark:border-slate-800 text-center text-slate-500 text-sm">
-                <p>
-                    &copy; {new Date().getFullYear()} Abhijeet Pachpute. Crafted with{' '}
-                    <i className="fa-solid fa-code text-primary-500"></i> and{' '}
-                    <i className="fa-solid fa-coffee text-yellow-600"></i>.
-                </p>
+            <footer className="py-10 border-t border-zinc-200 dark:border-zinc-800/80">
+                <div className="container mx-auto px-6 max-w-5xl flex flex-col sm:flex-row justify-between gap-2 font-mono text-xs text-zinc-500 dark:text-zinc-500">
+                    <p>&copy; {new Date().getFullYear()} Abhijeet Sandip Pachpute</p>
+                    <p>United States</p>
+                </div>
             </footer>
         </>
     );

@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import { ThemeProvider } from 'next-themes';
-import '@fortawesome/fontawesome-free/css/all.min.css';
 import './globals.css';
 
 // Optimized font loading via next/font (self-hosted, no external requests)
@@ -21,46 +20,51 @@ const jetbrainsMono = JetBrains_Mono({
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.abhijeetpachpute.com';
 
 export const metadata: Metadata = {
-  title: 'Abhijeet Pachpute | Software • AI • Security',
-  description: 'Portfolio of Abhijeet Pachpute — MS CS @ University of Utah. Software engineering, AI/ML, and cybersecurity.',
+  title: 'Abhijeet Sandip Pachpute · AI Engineer',
+  description:
+    'AI engineer building production LLM systems: RAG, agents, evals. MS CS, University of Utah (2026). 2 IEEE publications, 3 patents.',
   keywords: [
     'Abhijeet Pachpute',
-    'Software Engineer',
+    'Abhijeet Sandip Pachpute',
     'AI Engineer',
+    'ML Engineer',
     'Machine Learning',
-    'Cybersecurity',
+    'LLM',
+    'RAG',
+    'Agents',
+    'Software Engineer',
+    'Full Stack Developer',
     'University of Utah',
     'Computer Science',
-    'Full Stack Developer',
-    'React',
     'Python',
-    'Java',
-    'AWS',
+    'TypeScript',
   ],
-  authors: [{ name: 'Abhijeet Pachpute' }],
-  creator: 'Abhijeet Pachpute',
-  publisher: 'Abhijeet Pachpute',
+  authors: [{ name: 'Abhijeet Sandip Pachpute' }],
+  creator: 'Abhijeet Sandip Pachpute',
+  publisher: 'Abhijeet Sandip Pachpute',
   metadataBase: new URL(siteUrl),
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: siteUrl,
-    title: 'Abhijeet Pachpute | Software • AI • Security',
-    description: 'MS CS @ University of Utah. Building production software, shipping applied AI, and caring obsessively about security and reliability.',
-    siteName: 'Abhijeet Pachpute Portfolio',
+    title: 'Abhijeet Sandip Pachpute · AI Engineer',
+    description:
+      'AI engineer building production LLM systems: RAG, agents, evals. MS CS, University of Utah (2026). 2 IEEE publications, 3 patents.',
+    siteName: 'Abhijeet Sandip Pachpute',
     images: [
       {
         url: `${siteUrl}/og-image.png`,
         width: 1200,
         height: 630,
-        alt: 'Abhijeet Pachpute - Building Intelligent & Secure Systems',
+        alt: 'Abhijeet Sandip Pachpute · AI Engineer',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Abhijeet Pachpute | Software • AI • Security',
-    description: 'MS CS @ University of Utah. Building production software, shipping applied AI, and caring obsessively about security and reliability.',
+    title: 'Abhijeet Sandip Pachpute · AI Engineer',
+    description:
+      'AI engineer building production LLM systems: RAG, agents, evals. MS CS, University of Utah (2026).',
     images: [`${siteUrl}/og-image.png`],
   },
   robots: {
@@ -87,12 +91,14 @@ export default function RootLayout({
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: 'Abhijeet Pachpute',
-    jobTitle: 'Software Engineer | AI Engineer | Security Specialist',
+    name: 'Abhijeet Sandip Pachpute',
+    alternateName: 'Abhi',
+    jobTitle: 'AI Engineer | Software Engineer',
     url: siteUrl,
     sameAs: [
       'https://linkedin.com/in/abhijeet-pachpute/',
       'https://github.com/AbhijeetP21',
+      'https://scholar.google.com/citations?user=1aG6rS8AAAAJ',
     ],
     alumniOf: {
       '@type': 'EducationalOrganization',
@@ -100,11 +106,13 @@ export default function RootLayout({
     },
     email: 'abhijeetsp21@gmail.com',
     knowsAbout: [
-      'Software Engineering',
       'Artificial Intelligence',
       'Machine Learning',
-      'Cybersecurity',
+      'LLM Applications',
+      'Retrieval-Augmented Generation',
+      'Software Engineering',
       'Full Stack Development',
+      'Cybersecurity',
     ],
   };
 
@@ -122,8 +130,8 @@ export default function RootLayout({
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
         <link rel="manifest" href="/favicon/site.webmanifest" />
       </head>
-      <body className="bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-200 selection:bg-primary-500 selection:text-white antialiased overflow-x-hidden">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      <body className="bg-[#fafaf9] text-zinc-900 dark:bg-[#0a0a0c] dark:text-zinc-300 selection:bg-emerald-500/25 antialiased overflow-x-hidden">
+        <ThemeProvider attribute="class" defaultTheme="dark">
           {children}
         </ThemeProvider>
         <Analytics />

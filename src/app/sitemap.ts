@@ -1,11 +1,18 @@
 import { MetadataRoute } from 'next';
+import { posts } from '@/data/writing';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.abhijeetpachpute.com';
-  
-  // Since this is a single-page application with hash navigation,
-  // we only include the main page in the sitemap
-  // Search engines will crawl the page and discover the hash sections
+
+  const writingPages = posts
+    .filter((post) => post.status === 'published')
+    .map((post) => ({
+      url: `${siteUrl}/writing/${post.slug}`,
+      lastModified: new Date(`${post.date}T00:00:00`),
+      changeFrequency: 'yearly' as const,
+      priority: 0.6,
+    }));
+
   return [
     {
       url: siteUrl,
@@ -13,5 +20,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 1.0,
     },
+    {
+      url: `${siteUrl}/writing`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    ...writingPages,
   ];
 }

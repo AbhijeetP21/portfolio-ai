@@ -1,6 +1,7 @@
 'use client';
 
 import { useTheme } from '@/hooks/useTheme';
+import { Icon } from './ui/Icon';
 
 interface ThemeToggleProps {
   mobile?: boolean;
@@ -9,15 +10,16 @@ interface ThemeToggleProps {
 export function ThemeToggle({ mobile = false }: ThemeToggleProps) {
   const { theme, toggleTheme, mounted } = useTheme();
 
+  const base =
+    'rounded-lg border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100 hover:border-zinc-400 dark:hover:border-zinc-600 transition-colors';
+
   if (!mounted) {
     return (
       <button
-        className={`w-10 h-10 rounded-full border border-slate-200 dark:border-slate-700 bg-white/70 dark:bg-slate-900/60 hover:scale-105 transition-all grid place-items-center cursor-target ${
-          mobile ? 'md:hidden' : ''
-        }`}
+        className={`w-9 h-9 grid place-items-center ${base} ${mobile ? 'md:hidden' : ''}`}
         aria-label="Toggle theme"
       >
-        <i className="fa-solid fa-moon text-slate-700 dark:text-slate-200"></i>
+        <Icon name="moon" size={15} />
       </button>
     );
   }
@@ -25,18 +27,14 @@ export function ThemeToggle({ mobile = false }: ThemeToggleProps) {
   return (
     <button
       onClick={toggleTheme}
-      className={`${
+      className={
         mobile
-          ? 'px-5 py-3 rounded-full border border-slate-200 dark:border-slate-700 bg-white/70 dark:bg-slate-900/60 hover:scale-105 transition-all flex items-center gap-3 cursor-target'
-          : 'w-10 h-10 rounded-full border border-slate-200 dark:border-slate-700 bg-white/70 dark:bg-slate-900/60 hover:scale-105 transition-all grid place-items-center cursor-target'
-      }`}
+          ? `px-5 py-3 flex items-center gap-3 ${base}`
+          : `w-9 h-9 grid place-items-center ${base}`
+      }
       aria-label="Toggle theme"
     >
-      <i
-        className={`fa-solid ${
-          theme === 'dark' ? 'fa-sun' : 'fa-moon'
-        } ${mobile ? '' : 'text-slate-700 dark:text-slate-200'}`}
-      ></i>
+      <Icon name={theme === 'dark' ? 'sun' : 'moon'} size={15} />
       {mobile && <span className="text-base">Toggle theme</span>}
     </button>
   );

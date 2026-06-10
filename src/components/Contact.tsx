@@ -1,104 +1,82 @@
 'use client';
 
 import { useToast } from '@/contexts/ToastContext';
+import { SectionHeading } from './ui/SectionHeading';
+import { Icon } from './ui/Icon';
 
 export function Contact() {
   const { displayToast } = useToast();
 
   const copyEmail = () => {
-    const email = 'abhijeetsp21@gmail.com';
     navigator.clipboard
-      .writeText(email)
-      .then(() => displayToast('Email copied to clipboard!'))
+      .writeText('abhijeetsp21@gmail.com')
+      .then(() => displayToast('Email copied to clipboard'))
       .catch(() => displayToast('Failed to copy email'));
   };
 
   return (
-    <section id="contact" className="py-16 relative overflow-hidden">
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-4xl mx-auto glass-surface rounded-3xl p-8 md:p-12 border border-slate-200 dark:border-slate-700 tilt-card">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold mb-4">Let&apos;s build something that works at scale.</h2>
-            <p className="text-slate-600 dark:text-slate-400">
-              If it touches production, reliability, or security… I&apos;m interested.
-            </p>
-          </div>
+    <section id="contact" className="py-24 border-t border-zinc-200 dark:border-zinc-800/80">
+      <div className="container mx-auto px-6 max-w-5xl">
+        <SectionHeading
+          index="08"
+          label="Contact"
+          title="Let's talk"
+          description="I'm looking for AI engineer, ML engineer, and full-stack SWE roles. If you're building something real, I'd like to hear about it. I usually respond within 24 hours."
+        />
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Contact Info */}
-            <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-accent-500/10 flex items-center justify-center text-accent-500 shrink-0">
-                  <i className="fa-solid fa-envelope text-xl"></i>
-                </div>
-                <div>
-                  <h4 className="text-sm text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">Email</h4>
-                  <a
-                    href="mailto:abhijeetsp21@gmail.com"
-                    className="text-lg hover:text-accent-500 transition-colors break-all cursor-target"
-                  >
-                    abhijeetsp21@gmail.com
-                  </a>
-                </div>
-              </div>
+        <div className="flex flex-wrap items-center gap-4">
+          <a
+            href="mailto:abhijeetsp21@gmail.com"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-zinc-950 text-zinc-50 dark:bg-zinc-50 dark:text-zinc-950 text-sm font-medium hover:opacity-85 transition-opacity"
+          >
+            <Icon name="mail" size={14} />
+            abhijeetsp21@gmail.com
+          </a>
+          <button
+            onClick={copyEmail}
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-zinc-300 dark:border-zinc-700 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:border-zinc-500 dark:hover:border-zinc-500 transition-colors"
+          >
+            <Icon name="copy" size={14} />
+            Copy email
+          </button>
+        </div>
 
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-accent-500/10 flex items-center justify-center text-accent-500 shrink-0">
-                  <i className="fa-solid fa-location-dot text-xl"></i>
-                </div>
-                <div>
-                  <h4 className="text-sm text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider">Location</h4>
-                  <p className="text-lg">United States</p>
-                </div>
-              </div>
-
-              <div className="flex gap-4 mt-8">
-                <a
-                  href="https://linkedin.com/in/abhijeet-pachpute/"
-                  target="_blank"
-                  className="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-900 dark:text-white hover:bg-[#0077b5] hover:text-white transition-all hover:-translate-y-1 cursor-target"
-                  aria-label="LinkedIn"
-                >
-                  <i className="fa-brands fa-linkedin-in text-xl"></i>
-                </a>
-                <a
-                  href="https://github.com/AbhijeetP21"
-                  target="_blank"
-                  className="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-900 dark:text-white hover:bg-slate-700 hover:text-white transition-all hover:-translate-y-1 cursor-target"
-                  aria-label="GitHub"
-                >
-                  <i className="fa-brands fa-github text-xl"></i>
-                </a>
-                <a
-                  href="https://scholar.google.com/citations?user=1aG6rS8AAAAJ&hl=en"
-                  target="_blank"
-                  className="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-900 dark:text-white hover:bg-[#4285F4] hover:text-white transition-all hover:-translate-y-1 cursor-target"
-                  aria-label="Google Scholar"
-                >
-                  <i className="fa-solid fa-graduation-cap text-xl"></i>
-                </a>
-              </div>
-            </div>
-
-            {/* Action */}
-            <div className="bg-white/60 dark:bg-slate-900/50 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 text-center">
-              <i className="fa-regular fa-paper-plane text-4xl text-accent-500 mb-4"></i>
-              <h3 className="text-xl font-bold mb-2">Send me a message</h3>
-              <p className="text-slate-600 dark:text-slate-400 mb-6 text-sm">I usually respond within 24 hours.</p>
-              <a
-                href="mailto:abhijeetsp21@gmail.com"
-                className="inline-block w-full py-3 bg-accent-500 hover:bg-accent-400 text-white font-bold rounded-xl transition-colors cursor-target"
-              >
-                Launch Email App
-              </a>
-              <button
-                onClick={copyEmail}
-                className="mt-4 text-sm text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white underline decoration-dotted cursor-target"
-              >
-                Or copy email to clipboard
-              </button>
-            </div>
-          </div>
+        <div className="flex flex-wrap items-center gap-6 mt-10 text-sm text-zinc-500 dark:text-zinc-400">
+          <a
+            href="https://linkedin.com/in/abhijeet-pachpute/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 hover:text-zinc-950 dark:hover:text-zinc-100 transition-colors"
+          >
+            <Icon name="linkedin" size={15} />
+            LinkedIn
+          </a>
+          <a
+            href="https://github.com/AbhijeetP21"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 hover:text-zinc-950 dark:hover:text-zinc-100 transition-colors"
+          >
+            <Icon name="github" size={15} />
+            GitHub
+          </a>
+          <a
+            href="https://scholar.google.com/citations?user=1aG6rS8AAAAJ&hl=en"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 hover:text-zinc-950 dark:hover:text-zinc-100 transition-colors"
+          >
+            <Icon name="scholar" size={15} />
+            Google Scholar
+          </a>
+          <a
+            href="/Abhijeet_Resume_SDE_June26.pdf"
+            target="_blank"
+            className="inline-flex items-center gap-2 hover:text-zinc-950 dark:hover:text-zinc-100 transition-colors"
+          >
+            <Icon name="download" size={15} />
+            Resume
+          </a>
         </div>
       </div>
     </section>

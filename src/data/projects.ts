@@ -1,19 +1,16 @@
+export type ProjectStatus = 'shipped' | 'in-progress';
+
 export interface Project {
   title: string;
+  status: ProjectStatus;
+  featured?: boolean;
   description: string;
-  icon: string;
-  iconColor: string;
-  borderColor: string;
+  highlights?: string[]; // evidence lines shown on featured cards
+  progress?: { done: string; next: string }; // in-progress projects only
   tags: string[];
-  images?: string[]; // Array of image paths for screenshots
-  featured?: boolean; // Featured projects appear first
-  youtubeUrl?: string; // YouTube video URL for embed (takes priority over images)
-  liveUrl?: string; // Live site URL for preview (used if no youtubeUrl)
   links?: {
     github?: string;
     demo?: string;
-    patent?: boolean;
-    paper?: boolean;
     writeup?: string;
   };
 }
@@ -21,13 +18,16 @@ export interface Project {
 export const projects: Project[] = [
   {
     title: 'ClipSync',
-    description: 'A secure, serverless real-time clipboard manager. Syncs clipboard content, files, and links across devices instantly using Next.js, Supabase, and PostgreSQL with Row Level Security (RLS).',
-    icon: 'fa-copy',
-    iconColor: 'text-cyan-500',
-    borderColor: 'hover:border-cyan-500/50',
-    tags: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL', 'Vercel'],
+    status: 'shipped',
     featured: true,
-    liveUrl: 'https://clipsync.abhijeetpachpute.com',
+    description:
+      'A secure, serverless real-time clipboard manager that syncs text, files, and links across devices instantly, with no custom backend to operate or patch.',
+    highlights: [
+      'Postgres Row Level Security enforces per-user data isolation at the database layer',
+      'Supabase Realtime channels push clipboard changes across devices in milliseconds',
+      'Fully serverless: auth, storage, and sync without a single backend server',
+    ],
+    tags: ['Next.js', 'TypeScript', 'Supabase', 'PostgreSQL', 'Vercel'],
     links: {
       github: 'https://github.com/AbhijeetP21/ClipSync',
       demo: 'https://clipsync.abhijeetpachpute.com',
@@ -36,13 +36,16 @@ export const projects: Project[] = [
   },
   {
     title: 'Multi-Agent Data Wrangler',
-    description: 'An auditable, configurable, and composable data transformation system modeled as a graph problem. Features distinct agents for profiling, candidate generation, validation, scoring, and ranking, with robust failure recovery.',
-    icon: 'fa-network-wired',
-    iconColor: 'text-indigo-500',
-    borderColor: 'hover:border-indigo-500/50',
-    tags: ['Python', 'Streamlit', 'Pydantic', 'Data Engineering'],
+    status: 'shipped',
     featured: true,
-    images: ['/projects/multi-agent-data-wrangler/demo.png'],
+    description:
+      'An auditable data-transformation system modeled as a graph: specialized agents profile data, generate candidate transforms, validate, score, and rank them.',
+    highlights: [
+      'Distinct agents for profiling, candidate generation, validation, scoring, and ranking',
+      'DAG-based execution with a full audit trail for every transform',
+      'Structured failure recovery instead of silent data drops',
+    ],
+    tags: ['Python', 'Streamlit', 'Pydantic', 'Multi-Agent', 'Data Engineering'],
     links: {
       github: 'https://github.com/AbhijeetP21/multi-agent-data-wrangler',
       demo: 'https://multi-agent-data-wrangler.streamlit.app/',
@@ -50,20 +53,36 @@ export const projects: Project[] = [
     },
   },
   {
+    title: 'Healthcare RAG System',
+    status: 'in-progress',
+    description:
+      'Retrieval-augmented question answering over FHIR clinical records. PHI detection runs before anything reaches a model, and an eval harness scores answer faithfulness.',
+    progress: {
+      done: 'FHIR ingestion and chunking, PHI detection pass, first retrieval baseline',
+      next: 'Hybrid retrieval and a regression eval suite for faithfulness',
+    },
+    tags: ['Python', 'LangChain', 'OpenAI', 'FHIR', 'Evals'],
+  },
+  {
+    title: 'Autonomous Web Agent',
+    status: 'in-progress',
+    description:
+      'A browser agent that completes multi-site tasks end-to-end with Playwright, pausing for human approval over Telegram before any irreversible step.',
+    progress: {
+      done: 'Multi-site task runner, structured error recovery, Telegram approval flow',
+      next: 'Task memory and failure replay for flaky pages',
+    },
+    tags: ['Python', 'Playwright', 'LLM', 'Telegram'],
+    links: {
+      writeup: '/writing/autonomous-web-agent',
+    },
+  },
+  {
     title: 'Dinodash',
-    description: 'Fast-paced, action-packed dinosaur survival game where players dodge obstacles, collect power-ups, and unlock achievements. Built with C++ and Raylib featuring immersive gameplay and pixel-art visuals.',
-    icon: 'fa-gamepad',
-    iconColor: 'text-green-500',
-    borderColor: 'hover:border-green-500/50',
-    tags: ['C++', 'Raylib', 'WebAssembly', 'Systems Architecture', 'Runtime Portability'],
-    featured: true,
-    images: [
-      '/projects/dinodash/Dinodash_start.png',
-      '/projects/dinodash/dinodash_ingame.png',
-      '/projects/dinodash/dinodash_night.png',
-    ],
-    youtubeUrl: 'https://youtu.be/naddU47TrCw?si=yloByl8n1Hw-KhiU',
-    liveUrl: 'https://abhijeetp21.github.io/Dinodash-play/',
+    status: 'shipped',
+    description:
+      'A C++/Raylib survival game compiled to WebAssembly: one native engine running across two runtimes.',
+    tags: ['C++', 'Raylib', 'WebAssembly'],
     links: {
       github: 'https://github.com/AbhijeetP21/Dinodash',
       demo: 'https://abhijeetp21.github.io/Dinodash-play/',
@@ -72,22 +91,10 @@ export const projects: Project[] = [
   },
   {
     title: 'Good Bowls',
-    description: 'Full-stack salad bowl restaurant app with React, Node.js, MongoDB, and Stripe payments. Features menu browsing, custom bowl builder, cart management, secure checkout, user authentication, and admin dashboard.',
-    icon: 'fa-bowl-food',
-    iconColor: 'text-emerald-500',
-    borderColor: 'hover:border-emerald-500/50',
+    status: 'shipped',
+    description:
+      'Full-stack restaurant e-commerce: custom bowl builder, Stripe checkout, user auth, and an admin dashboard.',
     tags: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Redux'],
-    featured: true,
-    images: [
-      '/projects/goodbowls/goodbowls_landing.png',
-      '/projects/goodbowls/home.png',
-      '/projects/goodbowls/good_bowls_login.png',
-      '/projects/goodbowls/buildyourown.png',
-      '/projects/goodbowls/cart.png',
-      '/projects/goodbowls/account.png',
-      '/projects/goodbowls/myorder.png',
-    ],
-    liveUrl: 'https://good-bowls.vercel.app',
     links: {
       github: 'https://github.com/AbhijeetP21/Good_Bowls',
       demo: 'https://good-bowls.vercel.app',
@@ -96,22 +103,19 @@ export const projects: Project[] = [
   },
   {
     title: 'Custom Unix Shell',
-    description: 'A minimal Unix-like shell implementation supporting command execution, piping, I/O redirections (>, <, >>), background execution (&), logical operators (&&, ||), and command history (!n). Built in C for CS5460/6460 Operating Systems.',
-    icon: 'fa-terminal',
-    iconColor: 'text-orange-500',
-    borderColor: 'hover:border-orange-500/50',
-    tags: ['C', 'Operating Systems', 'Shell'],
-    youtubeUrl: 'https://www.youtube.com/watch?v=MRQHSn69ySQ&t=12s',
+    status: 'shipped',
+    description:
+      'A Unix shell in C: piping, I/O redirection, background execution, logical operators, and command history.',
+    tags: ['C', 'Operating Systems'],
     links: {
       github: 'https://github.com/AbhijeetP21/Custom-Unix-Shell',
     },
   },
   {
     title: 'AI Prompt + RAG Toolkit',
-    description: 'Built a data analytics dashboard with natural language query capabilities using lightweight RAG. Combines client-side CSV processing with Gemini API for actionable insights on complex datasets.',
-    icon: 'fa-robot',
-    iconColor: 'text-purple-500',
-    borderColor: 'hover:border-purple-500/50',
+    status: 'shipped',
+    description:
+      'Analytics dashboard with natural-language querying over CSVs via lightweight retrieval and the Gemini API.',
     tags: ['RAG', 'Gemini API', 'Analytics'],
     links: {
       writeup: '/writing/rag-optimization-techniques',

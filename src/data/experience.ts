@@ -10,8 +10,8 @@ export interface ExperienceItem {
 
 export const experiences: ExperienceItem[] = [
   {
-    date: 'Jun 2025 – Present',
-    location: 'Salt Lake City, UT',
+    date: 'Jun 2025 – May 2026',
+    location: 'Salt Lake City, UT, USA',
     title: 'IT Systems & Security Intern',
     company: 'University of Utah • VP for Research',
     description: 'Securing research infrastructure for a $650M+ annual research enterprise.',
@@ -25,7 +25,7 @@ export const experiences: ExperienceItem[] = [
   },
   {
     date: 'May 2025 – Aug 2025',
-    location: 'Remote, USA',
+    location: 'Logan, UT (Remote), USA',
     title: 'AI Software Engineer (Summer\'25 Intern)',
     company: 'AVI Human Services',
     description: 'Built applied GenAI tools used by state administrators.',
