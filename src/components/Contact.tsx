@@ -18,7 +18,7 @@ export function Contact() {
     <section id="contact" className="py-24 border-t border-zinc-200 dark:border-zinc-800/80">
       <div className="container mx-auto px-6 max-w-5xl">
         <SectionHeading
-          index="08"
+          index="07"
           label="Contact"
           title="Let's talk"
           description="I'm looking for AI engineer, ML engineer, and full-stack SWE roles. If you're building something real, I'd like to hear about it. I usually respond within 24 hours."
@@ -70,12 +70,20 @@ export function Contact() {
             Google Scholar
           </a>
           <a
-            href="/Abhijeet_Resume_SDE_June26.pdf"
+            href="/Abhijeet_Pachpute_AI_Engineer.pdf"
             target="_blank"
             className="inline-flex items-center gap-2 hover:text-zinc-950 dark:hover:text-zinc-100 transition-colors"
           >
             <Icon name="download" size={15} />
-            Resume
+            Resume (AI)
+          </a>
+          <a
+            href="/Abhijeet_Resume_SDE.pdf"
+            target="_blank"
+            className="inline-flex items-center gap-2 hover:text-zinc-950 dark:hover:text-zinc-100 transition-colors"
+          >
+            <Icon name="download" size={15} />
+            Resume (SDE)
           </a>
         </div>
       </div>

@@ -7,7 +7,7 @@ export function Research() {
     <section id="research" className="py-20 border-t border-zinc-200 dark:border-zinc-800/80">
       <div className="container mx-auto px-6 max-w-5xl">
         <SectionHeading
-          index="03"
+          index="04"
           label="Research"
           title="Publications & patents"
           description="Peer-reviewed publications and filed patents from undergraduate research in applied AI and security."
@@ -46,6 +46,16 @@ export function Research() {
                 </li>
               ))}
             </ol>
+            <a
+              href="https://scholar.google.com/citations?user=1aG6rS8AAAAJ&hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 mt-6 font-mono text-xs text-zinc-500 dark:text-zinc-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+            >
+              <Icon name="scholar" size={13} />
+              Google Scholar Profile
+              <Icon name="arrow-up-right" size={11} />
+            </a>
           </div>
 
           {/* Patents */}

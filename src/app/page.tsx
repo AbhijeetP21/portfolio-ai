@@ -2,12 +2,10 @@
 
 import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
-import { About } from '@/components/About';
 import { Work } from '@/components/Work';
 import { NowBuilding } from '@/components/NowBuilding';
 import { Research } from '@/components/Research';
 import { Experience } from '@/components/Experience';
-import { WritingStrip } from '@/components/WritingStrip';
 import { SkillsMatrix } from '@/components/SkillsMatrix';
 import { Education } from '@/components/Education';
 import { Contact } from '@/components/Contact';
@@ -27,12 +25,10 @@ export default function Home() {
       <Navbar />
       <main id="main-content">
         <Hero />
-        <About />
         <Work />
         <NowBuilding />
-        <Research />
         <Experience />
-        <WritingStrip />
+        <Research />
         <SkillsMatrix />
         <Education />
         <Contact />

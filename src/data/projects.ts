@@ -17,6 +17,24 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: 'Autonomous Web Agent',
+    status: 'shipped',
+    featured: true,
+    description:
+      'A general-purpose autonomous web agent that runs multi-step browser workflows from a high-level goal.',
+    highlights: [
+      'Reduced accessibility-tree perception, a provider-agnostic LLM client (Anthropic- and OpenAI-compatible), and a Playwright executor',
+      'A robust reliability layer featuring retry/recovery, loop detection, and step budgets',
+      'Structured per-step observability and benchmark measuring task success and recovery rate (90% across 7 tasks including public sites)',
+      'Optional confirmation gate to require human approval before any sensitive action runs',
+    ],
+    tags: ['Python', 'Playwright', 'LLM', 'Agentic AI'],
+    links: {
+      github: 'https://github.com/AbhijeetP21/autonomous-web-agent-v2.1',
+      writeup: '/writing/autonomous-web-agent',
+    },
+  },
+  {
     title: 'ClipSync',
     status: 'shipped',
     featured: true,
@@ -50,31 +68,6 @@ export const projects: Project[] = [
       github: 'https://github.com/AbhijeetP21/multi-agent-data-wrangler',
       demo: 'https://multi-agent-data-wrangler.streamlit.app/',
       writeup: '/writing/multi-agent-data-wrangler',
-    },
-  },
-  {
-    title: 'Healthcare RAG System',
-    status: 'in-progress',
-    description:
-      'Retrieval-augmented question answering over FHIR clinical records. PHI detection runs before anything reaches a model, and an eval harness scores answer faithfulness.',
-    progress: {
-      done: 'FHIR ingestion and chunking, PHI detection pass, first retrieval baseline',
-      next: 'Hybrid retrieval and a regression eval suite for faithfulness',
-    },
-    tags: ['Python', 'LangChain', 'OpenAI', 'FHIR', 'Evals'],
-  },
-  {
-    title: 'Autonomous Web Agent',
-    status: 'in-progress',
-    description:
-      'A browser agent that completes multi-site tasks end-to-end with Playwright, pausing for human approval over Telegram before any irreversible step.',
-    progress: {
-      done: 'Multi-site task runner, structured error recovery, Telegram approval flow',
-      next: 'Task memory and failure replay for flaky pages',
-    },
-    tags: ['Python', 'Playwright', 'LLM', 'Telegram'],
-    links: {
-      writeup: '/writing/autonomous-web-agent',
     },
   },
   {
@@ -120,5 +113,27 @@ export const projects: Project[] = [
     links: {
       writeup: '/writing/rag-optimization-techniques',
     },
+  },
+  {
+    title: 'SynapticaAI — LLM Gateway & API Infrastructure',
+    status: 'in-progress',
+    description:
+      'OpenAI-compatible gateway with provider routing, semantic caching, request-level observability (latency, error rate, cache-hit rate), a live dashboard, and CI-gated evals.',
+    progress: {
+      done: 'Routing logic, semantic caching, and request logging skeleton',
+      next: 'Live metrics dashboard and automated evaluation pipeline',
+    },
+    tags: ['Next.js', 'Redis', 'LLM', 'API Gateway', 'Evals'],
+  },
+  {
+    title: 'Healthcare RAG System',
+    status: 'in-progress',
+    description:
+      'Retrieval-augmented question answering over synthetic FHIR records with a PHI-detection stage and an eval harness scoring answer faithfulness/groundedness.',
+    progress: {
+      done: 'FHIR ingestion and chunking, PHI detection pass',
+      next: 'Evaluation framework and faithfulness scoring',
+    },
+    tags: ['Python', 'LangChain', 'OpenAI', 'FHIR', 'Evals'],
   },
 ];

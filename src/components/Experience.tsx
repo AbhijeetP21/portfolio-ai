@@ -6,7 +6,7 @@ export function Experience() {
     <section id="experience" className="py-20 border-t border-zinc-200 dark:border-zinc-800/80">
       <div className="container mx-auto px-6 max-w-5xl">
         <SectionHeading
-          index="04"
+          index="03"
           label="Experience"
           title="Where I've worked"
           description="AI engineering, security, and backend systems across internships and research roles."

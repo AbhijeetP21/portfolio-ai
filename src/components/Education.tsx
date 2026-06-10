@@ -2,21 +2,21 @@ import { SectionHeading } from './ui/SectionHeading';
 import { Tag } from './ui/Tag';
 
 const coursework = [
-  'Graduate Algorithms',
-  'Operating Systems',
-  'Computer Architecture',
-  'Security & Privacy',
-  'Machine Learning Security',
-  'Deep Learning',
-  'Neuro-Symbolic Modeling',
-  'Manage Data with ML',
+  'Graduate Algorithms (CS 6150)',
+  'Operating Systems (CS 6460)',
+  'Computer Architecture (CS 6810)',
+  'Security & Privacy (CS 6495)',
+  'ML Security (CS 6958)',
+  'Deep Learning (CS 6353)',
+  'Neuro-Symbolic Modeling (CS 6964)',
+  'Manage Data with ML (CS 6964)',
 ];
 
 export function Education() {
   return (
     <section id="education" className="py-20 border-t border-zinc-200 dark:border-zinc-800/80">
       <div className="container mx-auto px-6 max-w-5xl">
-        <SectionHeading index="07" label="Education" title="Education" />
+        <SectionHeading index="06" label="Education" title="Education" />
 
         <div className="grid md:grid-cols-2 gap-6">
           <div className="rounded-xl border border-zinc-200 dark:border-zinc-800 p-8">

@@ -13,7 +13,7 @@ export function Hero() {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60"></span>
             <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
           </span>
-          building now: healthcare-rag · autonomous-web-agent
+          building now: healthcare-rag · synaptica-ai
         </a>
 
         <h1 className="text-4xl md:text-6xl font-semibold tracking-tight leading-[1.08] text-zinc-950 dark:text-zinc-50 mb-6">
@@ -23,13 +23,11 @@ export function Hero() {
         </h1>
 
         <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed mb-6">
-          I&apos;m <span className="text-zinc-950 dark:text-zinc-100 font-medium">Abhijeet Sandip Pachpute</span>, MS
-          in Computer Science, University of Utah (&rsquo;26). I ship LLM systems end to end: retrieval, agents,
-          evals, and the backend engineering that keeps them reliable.
+          I&apos;m <span className="text-zinc-950 dark:text-zinc-100 font-medium">Abhijeet Sandip Pachpute</span>. I ship LLM systems end to end (retrieval, agents, evals) plus the backend engineering that keeps them reliable.
         </p>
 
         <p className="font-mono text-sm text-zinc-500 dark:text-zinc-500 mb-10">
-          2 IEEE publications · 3 patents filed · prev: AI engineering @ AVI Human Services
+          MS CS, University of Utah (May 2026, GPA 3.7) · 2 IEEE publications · 3 filed patents
         </p>
 
         <div className="flex flex-wrap items-center gap-4 mb-12">
@@ -41,11 +39,19 @@ export function Hero() {
             <Icon name="arrow-right" size={14} />
           </a>
           <a
-            href="/Abhijeet_Resume_SDE_June26.pdf"
+            href="/Abhijeet_Pachpute_AI_Engineer.pdf"
             target="_blank"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-zinc-300 dark:border-zinc-700 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:border-zinc-500 dark:hover:border-zinc-500 transition-colors"
           >
-            Resume
+            Resume (AI)
+            <Icon name="download" size={14} />
+          </a>
+          <a
+            href="/Abhijeet_Resume_SDE.pdf"
+            target="_blank"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-zinc-300 dark:border-zinc-700 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:border-zinc-500 dark:hover:border-zinc-500 transition-colors"
+          >
+            Resume (SDE)
             <Icon name="download" size={14} />
           </a>
         </div>

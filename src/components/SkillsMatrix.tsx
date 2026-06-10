@@ -12,7 +12,7 @@ export function SkillsMatrix() {
     <section id="skills" className="py-20 border-t border-zinc-200 dark:border-zinc-800/80">
       <div className="container mx-auto px-6 max-w-5xl">
         <SectionHeading
-          index="06"
+          index="05"
           label="Skills"
           title="What I work with"
           description="Grouped by what the role needs, tiered by honest depth instead of a wall of logos."
