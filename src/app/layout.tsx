@@ -17,7 +17,11 @@ const jetbrainsMono = JetBrains_Mono({
   variable: '--font-mono',
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.abhijeetpachpute.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
+  ? process.env.NEXT_PUBLIC_SITE_URL
+  : process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : 'https://www.abhijeetpachpute.com';
 
 export const metadata: Metadata = {
   title: 'Abhijeet Sandip Pachpute · AI Engineer',
