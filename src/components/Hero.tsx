@@ -39,19 +39,11 @@ export function Hero() {
             <Icon name="arrow-right" size={14} />
           </a>
           <a
-            href="/Abhijeet_Pachpute_AI_Engineer.pdf"
+            href="/Abhijeet_Pachpute_Resume.pdf"
             target="_blank"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-zinc-300 dark:border-zinc-700 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:border-zinc-500 dark:hover:border-zinc-500 transition-colors"
           >
-            Resume (AI)
-            <Icon name="download" size={14} />
-          </a>
-          <a
-            href="/Abhijeet_Resume_SDE.pdf"
-            target="_blank"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-zinc-300 dark:border-zinc-700 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:border-zinc-500 dark:hover:border-zinc-500 transition-colors"
-          >
-            Resume (SDE)
+            Resume
             <Icon name="download" size={14} />
           </a>
         </div>
