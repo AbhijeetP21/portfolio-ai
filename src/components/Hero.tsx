@@ -23,7 +23,7 @@ export function Hero() {
         </h1>
 
         <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed mb-6">
-          I&apos;m <span className="text-zinc-950 dark:text-zinc-100 font-medium">Abhijeet Sandip Pachpute</span>. I ship LLM systems end to end (retrieval, agents, evals) plus the backend engineering that keeps them reliable.
+          I&apos;m <span className="text-zinc-950 dark:text-zinc-100 font-medium">Abhijeet Sandip Pachpute</span>, an AI engineer at Paxel AI. I ship LLM systems end to end (retrieval, agents, evals) plus the backend engineering that keeps them reliable.
         </p>
 
         <p className="font-mono text-sm text-zinc-500 dark:text-zinc-500 mb-10">
