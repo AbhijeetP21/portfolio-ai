@@ -9,7 +9,7 @@ export function Experience() {
           index="03"
           label="Experience"
           title="Where I've worked"
-          description="AI engineering, security, and backend systems across internships and research roles."
+          description="AI engineering, security, and backend systems across startup, internship, and research roles."
         />
 
         <div>

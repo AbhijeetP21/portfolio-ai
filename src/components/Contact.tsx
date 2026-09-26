@@ -70,20 +70,12 @@ export function Contact() {
             Google Scholar
           </a>
           <a
-            href="/Abhijeet_Pachpute_AI_Engineer.pdf"
+            href="/Abhijeet_Pachpute_Resume.pdf"
             target="_blank"
             className="inline-flex items-center gap-2 hover:text-zinc-950 dark:hover:text-zinc-100 transition-colors"
           >
             <Icon name="download" size={15} />
-            Resume (AI)
-          </a>
-          <a
-            href="/Abhijeet_Resume_SDE.pdf"
-            target="_blank"
-            className="inline-flex items-center gap-2 hover:text-zinc-950 dark:hover:text-zinc-100 transition-colors"
-          >
-            <Icon name="download" size={15} />
-            Resume (SDE)
+            Resume
           </a>
         </div>
       </div>
