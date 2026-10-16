@@ -8,6 +8,7 @@ import { Research } from '@/components/Research';
 import { Experience } from '@/components/Experience';
 import { SkillsMatrix } from '@/components/SkillsMatrix';
 import { Education } from '@/components/Education';
+import { Principles } from '@/components/Principles';
 import { Contact } from '@/components/Contact';
 import { Toast } from '@/components/Toast';
 import { ToastProvider } from '@/contexts/ToastContext';
@@ -31,6 +32,7 @@ export default function Home() {
         <Research />
         <SkillsMatrix />
         <Education />
+        <Principles />
         <Contact />
       </main>
       <Toast />
