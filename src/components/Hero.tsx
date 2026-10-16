@@ -13,7 +13,7 @@ export function Hero() {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60"></span>
             <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
           </span>
-          building now: healthcare-rag · synaptica-ai
+          building now: healthcare-rag
         </a>
 
         <h1 className="text-4xl md:text-6xl font-semibold tracking-tight leading-[1.08] text-zinc-950 dark:text-zinc-50 mb-6">

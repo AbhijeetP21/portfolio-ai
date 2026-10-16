@@ -71,6 +71,22 @@ export const projects: Project[] = [
     },
   },
   {
+    title: 'SynapticaAI — Neurosymbolic LLM Orchestrator',
+    status: 'shipped',
+    featured: true,
+    description:
+      'An orchestration engine that routes each query to a math, code, or general expert and starts on the smallest model tier, escalating to larger models only when the answer fails validation. Started as a team project; I built v2 with the API, live visualizer, and cloud experts.',
+    highlights: [
+      'Hybrid router combining symbolic query features with a lightweight neural classifier: 91.5% routing accuracy across GSM8K, MBPP, and TruthfulQA',
+      'Small → medium → large tiered escalation, gated by domain-specific validators for math, code, and general answers',
+      'v2: FastAPI backend, Next.js visualizer that shows each routing decision, validation path, and cost, and cloud experts (Gemini, Groq) via LiteLLM, all in Docker',
+    ],
+    tags: ['Python', 'FastAPI', 'Next.js', 'LiteLLM', 'LLM Routing'],
+    links: {
+      github: 'https://github.com/AbhijeetP21/SynapticaAI-v2.0',
+    },
+  },
+  {
     title: 'Dinodash',
     status: 'shipped',
     description:
@@ -113,17 +129,6 @@ export const projects: Project[] = [
     links: {
       writeup: '/writing/rag-optimization-techniques',
     },
-  },
-  {
-    title: 'SynapticaAI — LLM Gateway & API Infrastructure',
-    status: 'in-progress',
-    description:
-      'OpenAI-compatible gateway with provider routing, semantic caching, request-level observability (latency, error rate, cache-hit rate), a live dashboard, and CI-gated evals.',
-    progress: {
-      done: 'Routing logic, semantic caching, and request logging skeleton',
-      next: 'Live metrics dashboard and automated evaluation pipeline',
-    },
-    tags: ['Next.js', 'Redis', 'LLM', 'API Gateway', 'Evals'],
   },
   {
     title: 'Healthcare RAG System',

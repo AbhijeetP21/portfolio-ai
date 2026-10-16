@@ -17,7 +17,7 @@ export function NowBuilding() {
           description="Active builds, shown as they are rather than as finished products."
         />
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className={`grid gap-6 ${inProgress.length > 1 ? 'md:grid-cols-2' : 'max-w-2xl'}`}>
           {inProgress.map((project) => (
             <article
               key={project.title}
