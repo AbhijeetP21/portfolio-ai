@@ -18,7 +18,7 @@ export function useTheme() {
   };
 
   return {
-    theme: (resolvedTheme || 'dark') as 'light' | 'dark',
+    theme: (resolvedTheme || 'light') as 'light' | 'dark',
     toggleTheme,
     mounted,
   };

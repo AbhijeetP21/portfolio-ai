@@ -100,7 +100,7 @@ export function Navbar() {
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, '#contact')}
-              className="px-4 py-1.5 text-sm font-medium rounded-lg bg-zinc-950 text-zinc-50 dark:bg-zinc-50 dark:text-zinc-950 hover:opacity-85 transition-opacity"
+              className="interactive-button px-4 py-1.5 text-sm font-medium rounded-lg bg-zinc-950 text-zinc-50 dark:bg-zinc-50 dark:text-zinc-950 "
             >
               Contact
             </a>
@@ -183,7 +183,7 @@ export function Navbar() {
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, '#contact')}
-              className={`mt-6 px-6 py-3 text-center text-sm font-medium rounded-lg bg-zinc-950 text-zinc-50 dark:bg-zinc-50 dark:text-zinc-950 transition-all duration-300 ${
+              className={`interactive-button mt-6 px-6 py-3 text-center text-sm font-medium rounded-lg bg-zinc-950 text-zinc-50 dark:bg-zinc-50 dark:text-zinc-950 transition-all duration-300 ${
                 isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'
               }`}
               style={{ transitionDelay: isMenuOpen ? `${navLinks.length * 50}ms` : '0ms' }}

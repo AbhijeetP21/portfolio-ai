@@ -62,7 +62,7 @@ export function Work() {
             <article
               key={project.title}
               data-reveal
-              className="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/40 p-8 md:p-10 hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors"
+              className="interactive-card rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/40 p-8 md:p-10"
             >
               <div className="md:grid md:grid-cols-[1fr,260px] md:gap-10">
                 <div>
@@ -97,7 +97,7 @@ export function Work() {
         {/* Compact grid for the rest */}
         <div className="grid sm:grid-cols-2 gap-px bg-zinc-200 dark:bg-zinc-800 rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-800">
           {rest.map((project) => (
-            <article key={project.title} className="bg-white dark:bg-zinc-950 p-7 flex flex-col gap-3">
+            <article key={project.title} className="interactive-card interactive-card-flat bg-white dark:bg-zinc-950 p-7 flex flex-col gap-3">
               <h3 className="font-semibold text-zinc-950 dark:text-zinc-50">{project.title}</h3>
               <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed flex-grow">
                 {project.description}

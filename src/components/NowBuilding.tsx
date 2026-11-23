@@ -22,7 +22,7 @@ export function NowBuilding() {
             <article
               key={project.title}
               data-reveal
-              className="rounded-xl border border-dashed border-zinc-300 dark:border-zinc-700 p-8 flex flex-col gap-4"
+              className="interactive-card rounded-xl border border-dashed border-zinc-300 dark:border-zinc-700 p-8 flex flex-col gap-4"
             >
               <div className="flex items-center justify-between gap-4">
                 <span className="font-mono text-[11px] uppercase tracking-[0.15em] text-emerald-600 dark:text-emerald-400">

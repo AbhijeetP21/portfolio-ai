@@ -101,7 +101,7 @@ export default function WritingPage() {
                   <Link
                     key={post.slug}
                     href={`/writing/${post.slug}`}
-                    className="group block border-t border-zinc-200 dark:border-zinc-800 last:border-b"
+                    className="interactive-row group block border-t border-zinc-200 dark:border-zinc-800 last:border-b"
                   >
                     {row}
                   </Link>
