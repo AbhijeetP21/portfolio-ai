@@ -42,12 +42,14 @@
   box-shadow: var(--interaction-shadow);
 }
 
-.interactive-card:focus-within {
+/* Theme border utilities include an ancestor selector. The root scope keeps
+   interaction states above those defaults in both themes, without !important. */
+:root .interactive-card:focus-within {
   border-color: var(--interaction-border);
   box-shadow: var(--interaction-shadow);
 }
 
-.interactive-card-flat:focus-within {
+:root .interactive-card-flat:focus-within {
   box-shadow: inset 0 2px var(--interaction-border);
 }
 
@@ -63,15 +65,15 @@
     box-shadow: var(--interaction-shadow);
   }
 
-  .interactive-card:hover {
+  :root .interactive-card:hover {
     translate: 0 -3px;
     border-color: var(--interaction-border);
     box-shadow: var(--interaction-shadow);
   }
 
   /* The compact project grid shares edges: highlight without lifting a tile. */
-  .interactive-card-flat:hover,
-  .interactive-card-flat:focus-within {
+  :root .interactive-card-flat:hover,
+  :root .interactive-card-flat:focus-within {
     translate: none;
     box-shadow: inset 0 2px var(--interaction-border);
   }
