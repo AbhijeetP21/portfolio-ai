@@ -42,7 +42,7 @@ export const projects: Project[] = [
     highlights: [
       'Reduced accessibility-tree perception, a provider-agnostic LLM client (Anthropic- and OpenAI-compatible), and a Playwright executor',
       'A robust reliability layer featuring retry/recovery, loop detection, and step budgets',
-      'Structured per-step observability and benchmark measuring task success and recovery rate (90% across 7 tasks including public sites)',
+      'Structured per-step observability and benchmark measuring task success and recovery rate (90% task success across 7 tasks including public sites)',
       'Optional confirmation gate to require human approval before any sensitive action runs',
     ],
     tags: ['Python', 'Playwright', 'LLM', 'Agentic AI'],
