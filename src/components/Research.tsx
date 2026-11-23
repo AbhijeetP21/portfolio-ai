@@ -26,7 +26,7 @@ export function Research() {
                     href={pub.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex gap-4 py-4 border-t border-zinc-200 dark:border-zinc-800 last:border-b"
+                    className="interactive-row group flex gap-4 py-4 border-t border-zinc-200 dark:border-zinc-800 last:border-b"
                   >
                     <span className="font-mono text-xs text-zinc-400 dark:text-zinc-600 pt-1 shrink-0">
                       [{idx + 1}]

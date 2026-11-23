@@ -5,7 +5,7 @@ A modern, responsive portfolio website built with Next.js, React, and Tailwind C
 ## Features
 
 - Modern, glass-morphism design with smooth animations
-- Dark/Light theme toggle with system preference detection
+- Light mode by default with a persistent dark/light theme toggle
 - Custom cursor effects with flashlight overlay
 - Fully responsive design
 - Optimized performance with Next.js

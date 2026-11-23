@@ -31,7 +31,7 @@ export function WritingStrip() {
             <Link
               key={post.slug}
               href={`/writing/${post.slug}`}
-              className="group grid md:grid-cols-[120px,1fr,auto] gap-2 md:gap-8 py-6 border-t border-zinc-200 dark:border-zinc-800 last:border-b items-baseline"
+              className="interactive-row group grid md:grid-cols-[120px,1fr,auto] gap-2 md:gap-8 py-6 border-t border-zinc-200 dark:border-zinc-800 last:border-b items-baseline"
             >
               <span className="font-mono text-xs text-zinc-500 dark:text-zinc-500">{formatDate(post.date)}</span>
               <span>

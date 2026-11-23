@@ -135,7 +135,7 @@ export default function RootLayout({
         <link rel="manifest" href="/favicon/site.webmanifest" />
       </head>
       <body className="bg-[#fafaf9] text-zinc-900 dark:bg-[#0a0a0c] dark:text-zinc-300 selection:bg-emerald-500/25 antialiased overflow-x-hidden">
-        <ThemeProvider attribute="class" defaultTheme="dark">
+        <ThemeProvider attribute="class" defaultTheme="light">
           {children}
         </ThemeProvider>
         <Analytics />

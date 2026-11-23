@@ -27,14 +27,14 @@ export function Contact() {
         <div className="flex flex-wrap items-center gap-4">
           <a
             href="mailto:abhijeetsp21@gmail.com"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-zinc-950 text-zinc-50 dark:bg-zinc-50 dark:text-zinc-950 text-sm font-medium hover:opacity-85 transition-opacity"
+            className="interactive-button inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-zinc-950 text-zinc-50 dark:bg-zinc-50 dark:text-zinc-950 text-sm font-medium"
           >
             <Icon name="mail" size={14} />
             abhijeetsp21@gmail.com
           </a>
           <button
             onClick={copyEmail}
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-zinc-300 dark:border-zinc-700 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:border-zinc-500 dark:hover:border-zinc-500 transition-colors"
+            className="interactive-button inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-zinc-300 dark:border-zinc-700 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:border-zinc-500 dark:hover:border-zinc-500"
           >
             <Icon name="copy" size={14} />
             Copy email
