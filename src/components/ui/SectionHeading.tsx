@@ -8,7 +8,7 @@ interface SectionHeadingProps {
 export function SectionHeading({ index, label, title, description }: SectionHeadingProps) {
   return (
     <div className="mb-12">
-      <p className="font-mono text-xs uppercase tracking-[0.2em] text-emerald-600 dark:text-emerald-400 mb-3">
+      <p className="font-mono text-sm uppercase tracking-[0.2em] text-emerald-700 dark:text-emerald-400 mb-3">
         {index} — {label}
       </p>
       <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">

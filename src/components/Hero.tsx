@@ -7,7 +7,7 @@ export function Hero() {
         {/* Status line — links to the in-progress work */}
         <a
           href="#building"
-          className="inline-flex items-center gap-2.5 font-mono text-xs text-zinc-600 dark:text-zinc-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors mb-10"
+          className="inline-flex items-center gap-2.5 font-mono text-sm text-zinc-600 dark:text-zinc-400 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors mb-10"
         >
           <span className="relative flex h-1.5 w-1.5">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60"></span>
@@ -26,7 +26,7 @@ export function Hero() {
           I&apos;m <span className="text-zinc-950 dark:text-zinc-100 font-medium">Abhijeet Sandip Pachpute</span>, an AI engineer at Paxel AI. I ship LLM systems end to end (retrieval, agents, evals) plus the backend engineering that keeps them reliable.
         </p>
 
-        <p className="font-mono text-sm text-zinc-500 dark:text-zinc-500 mb-10">
+        <p className="font-mono text-sm text-zinc-600 dark:text-zinc-400 mb-10">
           MS CS, University of Utah (May 2026, GPA 3.7) · 2 IEEE publications · 3 filed patents
         </p>
 
@@ -48,7 +48,7 @@ export function Hero() {
           </a>
         </div>
 
-        <div className="flex flex-wrap items-center gap-6 text-sm text-zinc-500 dark:text-zinc-400">
+        <div className="flex flex-wrap items-center gap-6 text-sm text-zinc-600 dark:text-zinc-400">
           <a
             href="mailto:abhijeetsp21@gmail.com"
             className="inline-flex items-center gap-2 hover:text-zinc-950 dark:hover:text-zinc-100 transition-colors"

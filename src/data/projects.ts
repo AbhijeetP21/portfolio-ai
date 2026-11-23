@@ -6,6 +6,10 @@ export interface Project {
   featured?: boolean;
   description: string;
   highlights?: string[]; // evidence lines shown on featured cards
+  outcome?: { value: string; label: string; context: string };
+  visual?:
+    | { kind: 'screenshot'; src: string; width: number; height: number; alt: string; caption: string }
+    | { kind: 'architecture'; steps: { title: string; detail: string }[]; caption: string };
   progress?: { done: string; next: string }; // in-progress projects only
   tags: string[];
   links?: {
@@ -20,12 +24,25 @@ export const projects: Project[] = [
     title: 'Autonomous Web Agent',
     status: 'shipped',
     featured: true,
+    outcome: {
+      value: '90%',
+      label: 'benchmark task success',
+      context: '19 of 21 runs across 7 tasks, including public sites. A small benchmark, not a production success rate.',
+    },
+    visual: {
+      kind: 'screenshot',
+      src: '/images/writing/autonomous-web-agent-benchmark.png',
+      width: 1024,
+      height: 837,
+      alt: 'Web Agent benchmark dashboard showing 19 successful runs out of 21 and per-task results.',
+      caption: 'Benchmark dashboard · open full-size image',
+    },
     description:
       'A general-purpose autonomous web agent that runs multi-step browser workflows from a high-level goal.',
     highlights: [
       'Reduced accessibility-tree perception, a provider-agnostic LLM client (Anthropic- and OpenAI-compatible), and a Playwright executor',
       'A robust reliability layer featuring retry/recovery, loop detection, and step budgets',
-      'Structured per-step observability and benchmark measuring task success and recovery rate (90% across 7 tasks including public sites)',
+      'Structured per-step observability and benchmark measuring task success and recovery rate (90% task success across 7 tasks including public sites)',
       'Optional confirmation gate to require human approval before any sensitive action runs',
     ],
     tags: ['Python', 'Playwright', 'LLM', 'Agentic AI'],
@@ -38,6 +55,20 @@ export const projects: Project[] = [
     title: 'ClipSync',
     status: 'shipped',
     featured: true,
+    outcome: {
+      value: 'Serverless',
+      label: 'cross-device clipboard sync',
+      context: 'Text, files, and links stay in sync with per-user data isolation and no custom backend to operate.',
+    },
+    visual: {
+      kind: 'architecture',
+      steps: [
+        { title: 'Your devices', detail: 'Next.js client + authentication' },
+        { title: 'Supabase', detail: 'Postgres + Row Level Security' },
+        { title: 'Live updates', detail: 'Realtime events sync signed-in devices' },
+      ],
+      caption: 'Simplified architecture · authenticated sync',
+    },
     description:
       'A secure, serverless real-time clipboard manager that syncs text, files, and links across devices instantly, with no custom backend to operate or patch.',
     highlights: [
@@ -56,6 +87,19 @@ export const projects: Project[] = [
     title: 'Multi-Agent Data Wrangler',
     status: 'shipped',
     featured: true,
+    outcome: {
+      value: 'Auditable',
+      label: 'data transformations',
+      context: 'Each transform is validated, scored, and ranked, with an execution trail and explicit failure recovery.',
+    },
+    visual: {
+      kind: 'screenshot',
+      src: '/projects/multi-agent-data-wrangler/demo.png',
+      width: 2706,
+      height: 1520,
+      alt: 'Data Wrangler interface with pipeline configuration, CSV upload, and the profiling-to-output pipeline.',
+      caption: 'Pipeline interface · open full-size image',
+    },
     description:
       'An auditable data-transformation system modeled as a graph: specialized agents profile data, generate candidate transforms, validate, score, and rank them.',
     highlights: [
@@ -74,6 +118,20 @@ export const projects: Project[] = [
     title: 'SynapticaAI — Neurosymbolic LLM Orchestrator',
     status: 'shipped',
     featured: true,
+    outcome: {
+      value: '91.5%',
+      label: 'routing accuracy',
+      context: 'Measured across GSM8K, MBPP, and TruthfulQA. Model tiers escalate when domain validation fails.',
+    },
+    visual: {
+      kind: 'architecture',
+      steps: [
+        { title: 'Route the query', detail: 'Math, code, or general expert' },
+        { title: 'Start small', detail: 'Run the smallest model tier' },
+        { title: 'Validate the answer', detail: 'Escalate to a larger tier on failure' },
+      ],
+      caption: 'Simplified architecture · validated routing',
+    },
     description:
       'An orchestration engine that routes each query to a math, code, or general expert and starts on the smallest model tier, escalating to larger models only when the answer fails validation. Started as a team project; I built v2 with the API, live visualizer, and cloud experts.',
     highlights: [

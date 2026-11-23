@@ -48,7 +48,7 @@ export default function WritingPage() {
       <main className="min-h-screen pt-36 pb-20">
         <div className="container mx-auto px-6 max-w-5xl">
           <div className="mb-14">
-            <p className="font-mono text-xs uppercase tracking-[0.2em] text-emerald-600 dark:text-emerald-400 mb-3">
+            <p className="font-mono text-sm uppercase tracking-[0.2em] text-emerald-600 dark:text-emerald-400 mb-3">
               Writing
             </p>
             <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50">
@@ -63,7 +63,7 @@ export default function WritingPage() {
             {sorted.map((post) => {
               const row = (
                 <div className="grid md:grid-cols-[120px,1fr,auto] gap-2 md:gap-8 py-7 items-baseline">
-                  <span className="font-mono text-xs text-zinc-500 dark:text-zinc-500">{formatDate(post.date)}</span>
+                  <span className="font-mono text-sm text-zinc-600 dark:text-zinc-400">{formatDate(post.date)}</span>
                   <span>
                     <span className="flex flex-wrap items-baseline gap-3">
                       <span
@@ -76,7 +76,7 @@ export default function WritingPage() {
                         {post.title}
                       </span>
                       {post.status === 'coming-soon' && (
-                        <span className="font-mono text-[11px] uppercase tracking-[0.15em] text-zinc-400 dark:text-zinc-600 shrink-0">
+                        <span className="font-mono text-sm uppercase tracking-[0.15em] text-zinc-600 dark:text-zinc-400 shrink-0">
                           coming soon
                         </span>
                       )}
@@ -90,7 +90,7 @@ export default function WritingPage() {
                       ))}
                     </span>
                   </span>
-                  <span className="hidden md:block font-mono text-xs text-zinc-400 dark:text-zinc-600">
+                  <span className="hidden md:block font-mono text-sm text-zinc-600 dark:text-zinc-400">
                     {post.readTime}
                   </span>
                 </div>
@@ -121,7 +121,7 @@ export default function WritingPage() {
 
           <Link
             href="/#contact"
-            className="inline-flex items-center gap-2 mt-10 font-mono text-xs text-zinc-500 dark:text-zinc-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+            className="inline-flex items-center gap-2 mt-10 font-mono text-sm text-zinc-600 dark:text-zinc-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
           >
             More posts in the works. Say hello in the meantime
             <Icon name="arrow-right" size={12} />
@@ -131,7 +131,7 @@ export default function WritingPage() {
 
       {/* Footer */}
       <footer className="py-10 border-t border-zinc-200 dark:border-zinc-800/80">
-        <div className="container mx-auto px-6 max-w-5xl flex flex-col sm:flex-row justify-between gap-2 font-mono text-xs text-zinc-500 dark:text-zinc-500">
+        <div className="container mx-auto px-6 max-w-5xl flex flex-col sm:flex-row justify-between gap-2 font-mono text-sm text-zinc-600 dark:text-zinc-400">
           <p>&copy; {new Date().getFullYear()} Abhijeet Sandip Pachpute</p>
           <p>United States</p>
         </div>

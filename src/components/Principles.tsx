@@ -27,7 +27,7 @@ export function Principles() {
               key={line}
               className="grid grid-cols-[2.5rem,1fr] gap-4 py-5 border-t border-zinc-200 dark:border-zinc-800 last:border-b"
             >
-              <span className="font-mono text-xs text-zinc-400 dark:text-zinc-600 pt-1 select-none">
+              <span className="font-mono text-sm text-zinc-600 dark:text-zinc-400 pt-1 select-none">
                 {String(i + 1).padStart(2, '0')}
               </span>
               <p className="text-zinc-700 dark:text-zinc-300 leading-relaxed">{line}</p>

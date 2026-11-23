@@ -25,13 +25,13 @@ export function NowBuilding() {
               className="interactive-card rounded-xl border border-dashed border-zinc-300 dark:border-zinc-700 p-8 flex flex-col gap-4"
             >
               <div className="flex items-center justify-between gap-4">
-                <span className="font-mono text-[11px] uppercase tracking-[0.15em] text-emerald-600 dark:text-emerald-400">
+                <span className="font-mono text-sm uppercase tracking-[0.15em] text-emerald-700 dark:text-emerald-400">
                   in progress
                 </span>
                 {project.links?.writeup && (
                   <Link
                     href={project.links.writeup}
-                    className="inline-flex items-center gap-1.5 font-mono text-xs text-zinc-600 dark:text-zinc-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+                    className="inline-flex items-center gap-1.5 font-mono text-sm text-zinc-600 dark:text-zinc-400 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
                   >
                     <Icon name="file-text" size={13} />
                     Writeup
@@ -45,13 +45,13 @@ export function NowBuilding() {
               <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">{project.description}</p>
 
               {project.progress && (
-                <dl className="space-y-2 font-mono text-xs leading-relaxed">
+                <dl className="space-y-2 font-mono text-sm leading-relaxed">
                   <div className="flex gap-2">
-                    <dt className="text-emerald-600 dark:text-emerald-400 shrink-0">done</dt>
+                    <dt className="text-emerald-700 dark:text-emerald-400 shrink-0">done</dt>
                     <dd className="text-zinc-600 dark:text-zinc-400">{project.progress.done}</dd>
                   </div>
                   <div className="flex gap-2">
-                    <dt className="text-zinc-400 dark:text-zinc-500 shrink-0">next</dt>
+                    <dt className="text-zinc-600 dark:text-zinc-400 shrink-0">next</dt>
                     <dd className="text-zinc-600 dark:text-zinc-400">{project.progress.next}</dd>
                   </div>
                 </dl>

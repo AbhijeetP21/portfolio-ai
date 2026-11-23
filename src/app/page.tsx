@@ -37,7 +37,7 @@ export default function Home() {
       </main>
       <Toast />
       <footer className="py-10 border-t border-zinc-200 dark:border-zinc-800/80">
-        <div className="container mx-auto px-6 max-w-5xl flex flex-col sm:flex-row justify-between gap-2 font-mono text-xs text-zinc-500 dark:text-zinc-500">
+        <div className="container mx-auto px-6 max-w-5xl flex flex-col sm:flex-row justify-between gap-2 font-mono text-sm text-zinc-600 dark:text-zinc-400">
           <p>&copy; {new Date().getFullYear()} Abhijeet Sandip Pachpute</p>
           <p>United States</p>
         </div>

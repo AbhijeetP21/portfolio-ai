@@ -33,16 +33,16 @@ export function WritingStrip() {
               href={`/writing/${post.slug}`}
               className="interactive-row group grid md:grid-cols-[120px,1fr,auto] gap-2 md:gap-8 py-6 border-t border-zinc-200 dark:border-zinc-800 last:border-b items-baseline"
             >
-              <span className="font-mono text-xs text-zinc-500 dark:text-zinc-500">{formatDate(post.date)}</span>
+              <span className="font-mono text-sm text-zinc-600 dark:text-zinc-400">{formatDate(post.date)}</span>
               <span>
-                <span className="block font-medium text-zinc-950 dark:text-zinc-50 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                <span className="block font-medium text-zinc-950 dark:text-zinc-50 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
                   {post.title}
                 </span>
                 <span className="block text-sm text-zinc-600 dark:text-zinc-400 mt-1.5 leading-relaxed">
                   {post.description}
                 </span>
               </span>
-              <span className="hidden md:block font-mono text-xs text-zinc-400 dark:text-zinc-600">
+              <span className="hidden md:block font-mono text-sm text-zinc-600 dark:text-zinc-400">
                 {post.readTime}
               </span>
             </Link>
@@ -51,7 +51,7 @@ export function WritingStrip() {
 
         <Link
           href="/writing"
-          className="inline-flex items-center gap-2 mt-8 font-mono text-xs text-zinc-500 dark:text-zinc-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+          className="inline-flex items-center gap-2 mt-8 font-mono text-sm text-zinc-600 dark:text-zinc-400 hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors"
         >
           All writing
           <Icon name="arrow-right" size={12} />
