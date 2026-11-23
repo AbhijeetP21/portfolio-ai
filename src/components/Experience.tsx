@@ -19,8 +19,8 @@ export function Experience() {
               className="grid md:grid-cols-[200px,1fr] gap-2 md:gap-10 py-8 border-t border-zinc-200 dark:border-zinc-800 last:border-b"
             >
               <div>
-                <p className="font-mono text-xs text-zinc-500 dark:text-zinc-500">{exp.date}</p>
-                <p className="font-mono text-xs text-zinc-400 dark:text-zinc-600 mt-1">{exp.location}</p>
+                <p className="font-mono text-sm text-zinc-600 dark:text-zinc-400">{exp.date}</p>
+                <p className="font-mono text-sm text-zinc-600 dark:text-zinc-400 mt-1">{exp.location}</p>
               </div>
               <div>
                 <h3 className="font-semibold text-zinc-950 dark:text-zinc-50">{exp.title}</h3>

@@ -21,7 +21,7 @@ export function SkillsMatrix() {
         <div className="grid md:grid-cols-3 gap-10">
           {skillGroups.map((group) => (
             <div key={group.title}>
-              <h3 className="font-mono text-xs uppercase tracking-[0.15em] text-zinc-500 dark:text-zinc-400 mb-5">
+              <h3 className="font-mono text-sm uppercase tracking-[0.15em] text-zinc-600 dark:text-zinc-400 mb-5">
                 {group.title}
               </h3>
               <ul>
@@ -32,7 +32,7 @@ export function SkillsMatrix() {
                   >
                     <span className="text-zinc-700 dark:text-zinc-300">{item.name}</span>
                     <span
-                      className="font-mono text-[10px] tracking-[0.2em] text-emerald-600 dark:text-emerald-400 shrink-0"
+                      className="font-mono text-sm tracking-[0.2em] text-emerald-700 dark:text-emerald-400 shrink-0"
                       title={item.tier}
                       aria-label={item.tier}
                     >
@@ -45,7 +45,7 @@ export function SkillsMatrix() {
           ))}
         </div>
 
-        <p className="mt-8 font-mono text-xs text-zinc-500 dark:text-zinc-500">
+        <p className="mt-8 font-mono text-sm text-zinc-600 dark:text-zinc-400">
           ●●● use daily &nbsp;·&nbsp; ●●○ comfortable shipping &nbsp;·&nbsp; ●○○ have used, would ramp fast
         </p>
       </div>
